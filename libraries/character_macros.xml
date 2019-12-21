@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Notes for code diggers...
+-->
+<diff>
+    <add sel="/macros">
+		<!-- Favor The Bold - Player Character -->
+        <!-- Character Macro Name - Used in the gamestarts.xml to define our character -->
+		<macro name="character_player_ftb_macro" class="player">
+            <!-- No need to create a new component for our character, we just reuse the discover ref since it's a female gamestart -->
+			<component ref="character_player_discover" />
+			<properties>
+                <!-- Here we can define the characters name (technically no need for that since we define it in gamestarts.xml), race, faction & gender -->
+				<identification name="{82002,1}" race="argon" faction="player" female="true" />
+                <!-- Your spacesuit (no need to change it since there is just one -->
+				<spacesuit macro="ship_arg_xs_spacesuit_01_a_macro" />
+                    <!-- Here we can define custom body parts like head, torso & hair meshes. More are possible like helmets, glasses and so forth see character_macros.xml for examples -->
+					<models>
+						<model type="head" ref="assets/characters/argon/heads/char_arg_f_head_cau_02" />
+						<model type="torso" ref="assets/characters/argon/bodies/char_arg_f_body_crew_01" />
+						<model type="props" ref="assets/characters/argon/props/char_arg_f_hair_cau_03" />
+					</models>
+			</properties>
+			<connections>
+                <!-- I guess this links the lovely computer voice to our character -->
+				<connection ref="computer">
+					<macro ref="entity_betty_macro" connection="player" />
+				</connection>
+			</connections>
+		</macro>
+	</add>
+</diff>

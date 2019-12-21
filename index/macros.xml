@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <add sel="//index">
+        <entry name="ftb_galaxy_macro" value="extensions\FavorTheBold\maps\XU_ep2_universe\galaxy"/>
+        <entry name="ftb_cluster01_*" value="extensions\FavorTheBold\maps\xu_ep2_universe\ftb_clusters" />
+        <entry name="ftb_cluster01_sector01_*" value="extensions\FavorTheBold\maps\xu_ep2_universe\ftb_sectors" />
+        <entry name="ftb_cluster01_sector01_zone01_*" value="extensions\FavorTheBold\maps\xu_ep2_universe\ftb_zones" />
+    </add>
+</diff>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <add sel="/macros/macro[@name='Zone001_Cluster_14_Sector001_macro']/connections">
+        <connection name="connection_ClusterGate014To_ftb01" ref="gates">
+            <offset>
+                <position x="-15982.49609375" y="500" z="-9901.8330078125" />
+                <quaternion qx="0" qy="0" qz="0" qw="1" />
+            </offset>
+            <macro ref="props_gates_orb_accelerator_01_macro" connection="space" />
+        </connection>        
+    </add>  
+</diff>

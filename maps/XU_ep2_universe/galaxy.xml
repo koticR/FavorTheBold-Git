@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <add sel="/macros/macro[@name='XU_EP2_universe_macro']/connections">
+        <!-- Cluster Setup -->
+        <connection name="ftb_cluster01_connection" ref="clusters">
+        <offset>
+            <position x="-30015000" y="0" z="17311340" />
+        </offset>
+        <macro ref="ftb_cluster01_macro" connection="galaxy" />
+        </connection>
+        <!-- ToDo: Gate Setup -->
+        <connection name="ClusterGate_ftb01To014" ref="destination" path="../ftb_cluster01_connection/ftb_cluster01_sector01_connection/ftb_cluster01_sector01_zone03_connection/connection_ClusterGate_ftb01To14">
+            <macro connection="destination" path="../../../../../Cluster_14_connection/Cluster_14_Sector001_connection/Zone001_Cluster_14_Sector001_connection/connection_ClusterGate014To_ftb01" />
+        </connection>
+    </add>
+</diff>

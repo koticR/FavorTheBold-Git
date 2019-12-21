@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <add sel="/index">
+        <entry name="Cluster01_ftb" value="extensions\FavorTheBold\assets\environments\cluster\Cluster01_ftb" />
+    </add>
+</diff>

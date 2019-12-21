@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="FTBGameStart" >
+    <cues>
+        <cue name="FTB_Easy_Initial_Setup" module="x4ep1_gamestart_ftb_easy">
+            <conditions>
+                <event_cue_signalled cue="md.Setup.GameStart"/>
+            </conditions>
+            <actions>
+                <show_help duration="2s" custom="'Starting Initial Setup'"/>
+                <signal_cue cue="FTB_PHQ_Setup" />
+                <signal_cue cue="FTB_Faction_Setup" />
+                <signal_cue cue="FTB_Ship_Setup" />
+                <!-- Just for debug purposes -->
+                <signal_cue cue="FTB_UncoverMap" />
+            </actions>
+        </cue>
+
+        <!-- Let's skip the station intro drag -->
+        <cue name="FTB_PHQ_Setup" >
+            <conditions>
+	            <event_cue_signalled/>
+            </conditions>
+            <actions>
+                <!-- ToDo: Set position to new custom Sector. For now we default to the usual Argon Prime location -->
+	            <find_sector name="md.X4Ep1_Mentor_Subscriptions.Start.$HQSector" macro="macro.cluster_14_sector001_macro"/>
+	            <set_value name="md.X4Ep1_Mentor_Subscriptions.Start.$HQPosition" exact="position.[-85km, 8km, -25km]"/>
+                <!-- Fast forward to the Research questline -->
+                <signal_cue cue="md.X4Ep1_Mentor_Subscriptions.SHORTCUT_Research" />
+                <!-- Prevent initial Mission offer to trigger again -->
+                <cancel_cue cue="md.X4Ep1_Mentor_Subscriptions.Initialise" />
+	            <!-- <set_owner object="md.X4Ep1_Mentor_Subscriptions.Start.$HQ.buildstorage" faction="faction.player" overridenpc="true"/> -->
+                <!-- Let the player know everything is up and running (We might push this further down once everything is set up) -->
+                <show_help duration="2s" custom="'PHQ Setup Finished'"/>
+            </actions>
+        </cue>
+
+        <!-- Faction Setup -->
+        <cue name="FTB_Faction_Setup" >
+            <conditions>
+	            <event_cue_signalled/>
+            </conditions>
+            <actions>
+                <!-- Faction knowledge -->
+                <set_faction_known faction="faction.alliance" known="false" />
+                <set_faction_known faction="faction.antigone" known="true" />
+                <set_faction_known faction="faction.argon" known="true" />
+                <set_faction_known faction="faction.hatikvah" known="false" />
+                <set_faction_known faction="faction.holyorder" known="false" />
+                <set_faction_known faction="faction.paranid" known="false" />
+                <set_faction_known faction="faction.ministry" known="false"/>
+                <set_faction_known faction="faction.scaleplate" known="false" />
+                <set_faction_known faction="faction.teladi" known="false" />
+                <set_faction_known faction="faction.xenon" known="false" />
+                <set_faction_known faction="faction.khaak" known="false" />
+                <!-- Set Player relations to known factions -->
+                <set_faction_relation faction="faction.argon" otherfaction="faction.player" value="0.032"/>
+                <set_faction_relation faction="faction.antigone" otherfaction="faction.player" value="0.032"/>
+                <!-- Set player relations to hostile factions -->
+                <set_faction_relation faction="faction.xenon" otherfaction="faction.player" value="-1"/>
+                <set_faction_relation faction="faction.khaak" otherfaction="faction.player" value="-1"/>
+                <set_faction_relation faction="faction.scaleplate" otherfaction="faction.player" value="-0.0032"/>
+                <set_faction_relation faction="faction.criminal" otherfaction="faction.player" value="-0.0032"/>
+                <show_help duration="2s" custom="'Faction Setup finished'"/>
+            </actions>
+        </cue>
+
+        <!-- Ship Setup -->
+        <cue name="FTB_Ship_Setup" >
+            <conditions>
+	            <event_cue_signalled/>
+            </conditions>
+            <actions>
+                <!-- Add pilot to player ship -->
+				<find_ship name="$PlayerShip" owner="faction.player" space="player.zone" multiple="false" />
+				<create_control_entity name="$NewPilot" object="$PlayerShip" post="controlpost.aipilot" >
+					<select race="[race.argon]" tags="tag.aipilot"/>
+					<owner exact="faction.player"/>
+				</create_control_entity>
+                <!-- Set pilot skill level -->
+                <set_skill entity="$NewPilot" type="skilltype.piloting" exact="10" />
+				<set_skill entity="$NewPilot" type="skilltype.engineering" exact="5" />
+                <show_help duration="2s" custom="'Ship Setup finished'"/>
+            </actions>
+        </cue>
+
+        <!-- From alexalsp_open_map; Just for debug purposes -->
+        <cue name="FTB_UncoverMap" >
+            <conditions>
+	            <event_cue_signalled/>
+            </conditions>
+            <delay exact="10s" />
+            <actions>
+
+                <find_cluster groupname="$allclusters" space="player.galaxy" multiple="true" />
+                <do_all exact="$allclusters.count" counter="$i">
+                    <set_known object="$allclusters.{$i}" known="true" />
+                </do_all>
+                
+                <find_sector groupname="$allsectors" space="player.galaxy" multiple="true" />
+                <do_all exact="$allsectors.count" counter="$i">
+                    <set_known object="$allsectors.{$i}" known="true" />
+                </do_all>
+
+                <find_zone groupname="$allzones" space="player.galaxy" multiple="true" />
+                <do_all exact="$allzones.count" counter="$i">
+                    <set_known object="$allzones.{$i}" known="true" />
+                </do_all>
+
+                <find_station groupname="$allstations" space="player.galaxy" multiple="true" />
+                <do_all exact="$allstations.count" counter="$i">
+                    <set_known object="$allstations.{$i}" known="true" updatesnapshot="true" />
+                </do_all>
+
+                <find_gate name="$allgates" space="player.galaxy" active="true" multiple="true" />
+                <do_all exact="$allgates.count" counter="$i">
+                    <set_known object="$allgates.{$i}" known="true"  />
+                </do_all>
+
+                <!-- this catches the loot ships and etc and could be commented out -->
+                <find_object groupname="$Objects" space="player.galaxy" multiple="true" />	
+                <do_all exact="$Objects.count" counter="$i">
+                    <set_known object="$Objects.{$i}" known="true" />
+                </do_all>		
+            </actions>
+        </cue>
+    </cues>
+</mdscript>

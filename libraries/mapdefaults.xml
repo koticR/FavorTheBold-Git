@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <add sel="//defaults">
+        <dataset macro="ftb_cluster01_macro">
+            <properties>
+                <identification name="{82003,1}" description="{82003,3}" />
+                <sounds>
+                    <music ref="music_cluster_ftb" />
+                </sounds>
+                <area sunlight="1" economy="0.5" security="0.25" />
+            </properties>
+        </dataset>
+        <dataset macro="ftb_cluster01_sector01_macro">
+            <properties>
+                <identification name="{82003,2}" description="{82003,4}" />
+                <sounds>
+                    <music ref="music_cluster_ftb" />
+                </sounds>
+            </properties>
+        </dataset>
+    </add>
+</diff>

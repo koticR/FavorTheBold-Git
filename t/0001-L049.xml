@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- German Strings -->
+<language id="49">
+    <!-- Gamestart Entries-->
+    <page id="82001" title="Gamestart Overview" descr="0" voice="no">
+        <t id="1">Favor The Bold (Easy)</t>
+        <t id="2">ToDo: Proper Story Description</t>
+        <t id="3">ToDo: Proper Story Description</t>
+    </page>
+    <page id="82002" title="Gamestart Entries" descr="0" voice="no">
+        <t id="1">Avy Hel</t>
+        <t id="2">{82003, 4}</t>
+        <t id="3">25.000.000 {1001,101}</t>
+        <t id="4">ToDo: Equipment</t>
+    </page>
+    <page id="82003" title="Vandros Cluster Information" descr="0" voice="no">
+        <t id="1">Vandros Cluster Name</t>
+        <t id="2">Vandros Sektor Name</t>
+        <t id="3">Cluster Description</t>
+        <t id="4">Sector Description</t>
+    </page>
+</language>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<macros>
+    <macro name="ftb_cluster01_macro" class="cluster">
+    <component ref="standardcluster"/>
+    <connections>
+        <connection name="ftb_cluster01_sector01_connection" ref="sectors">
+            <macro ref="ftb_cluster01_sector01_macro" connection="cluster" />
+        </connection>
+        <connection name="ftb_cluster01_region00_connection" ref="regions">
+            <offset>
+                <position x="500" y="0" z="250" />
+                <!-- <rotation yaw="37" pitch="0" roll="0"/> -->
+            </offset>
+            <macro name="ftb_cluster01_region00_macro">
+                <component connection="cluster" ref="standardregion" />
+                <properties>
+                    <region ref="p1_40km_asteroid_field" />
+                </properties>
+            </macro>
+        </connection>
+        <connection name="ftb_cluster01_region01_connection" ref="regions">
+            <offset>
+                <position x="250" y="0" z="-250" />
+                <!-- <rotation yaw="279" pitch="0" roll="0"/> -->
+            </offset>
+            <macro name="ftb_cluster01_region01_macro">
+                <component connection="cluster" ref="standardregion" />
+                <properties>
+                    <region ref="p1_40km_ice_field" />
+                </properties>
+            </macro>
+        </connection>
+        <connection name="ftb_cluster01_region02_connection" ref="regions">
+            <offset>
+                <position x="-250" y="0" z="-500" />
+                <!-- <rotation yaw="268" pitch="0" roll="0"/> -->
+            </offset>
+            <macro name="ftb_cluster01_region02_macro">
+                <component connection="cluster" ref="standardregion" />
+                <properties>
+                    <region ref="p1_40km_hydrogen_field" />
+                </properties>
+            </macro>
+        </connection>
+        <connection ref="content">
+            <macro>
+                <component connection="space" ref="Cluster01_ftb" />
+            </macro>
+        </connection>
+    </connections>
+    </macro>
+</macros>
