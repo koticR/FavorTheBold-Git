@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<!-- ToDo: Change Planet to Earth Like -->
+<!-- ToDo: Further customizations -->
 <components>
 	<component name="Cluster01_ftb" class="celestialbody">
-		<source geometry="assets\environments\cluster\Cluster_08_data"/>
+		<source geometry="extensions\FavorTheBold\assets\environments\cluster\Cluster01_ftb_data"/>
 		<layers>
 			<layer>
 				<waypoints/>
@@ -10,7 +10,14 @@
 					<omni name="XU Omni01" shadow="0" r="248" g="218" b="225" range="1E+11" shadowrange="1E+11" lighteffect="1" lenseffect="sun_c_08" trigger="1" intensity="1.1" specularintensity="1">
 						<lightanimations/>
 						<offset>
-							<position x="-2.307512E+07" y="-1.38435E+08" z="-3.90714E+08"/>
+							<!-- <position x="-2.307512E+07" y="-1.38435E+08" z="-3.90714E+08"/> -->
+						<position x="-2.307512E+07" y="2.316948E+08" z="-3.90714E+08"/>
+						</offset>
+					</omni>
+					<omni name="XU Omni02" shadow="0" r="84" g="65" b="110" range="1E+11" shadowrange="1E+11" lighteffect="1" trigger="1" intensity="0.85">
+						<lightanimations/>
+						<offset>
+							<position x="2.307512E+07" y="-2.316948E+08" z="-3.90714E+08"/>
 						</offset>
 					</omni>
 					<ambient name="XU Ambient01" r="84" g="65" b="110" range="1E+11" intensity="1">
@@ -52,11 +59,11 @@
 					<quaternion qx="-0" qy="-1" qz="-0" qw="-7.54979E-08"/>
 				</offset>
 				<parts>
-					<part name="planet001">
+					<part name="atmosphere001">
 						<lods>
 							<lod index="0">
 								<materials>
-									<material id="1" ref="newplanets.planet_cluster14_planet1"/>
+									<material id="1" ref="newplanets.atmo_cluster14_planet1"/>
 								</materials>
 							</lod>
 						</lods>
@@ -72,11 +79,11 @@
 					<position x="-1.455166E+08" y="1222543" z="-1.464545E+07"/>
 				</offset>
 				<parts>
-					<part name="Sphere002">
+					<part name="planet001c">
 						<lods>
 							<lod index="0">
 								<materials>
-									<material id="1" ref="newplanets.atmo_cluster14_planet1"/>
+									<material id="1" ref="newplanets.planet_cluster14_planet1"/>
 								</materials>
 							</lod>
 						</lods>

@@ -9,7 +9,7 @@
         <macro ref="ftb_cluster01_macro" connection="galaxy" />
         </connection>
         <!-- ToDo: Gate Setup -->
-        <connection name="ClusterGate_ftb01To014" ref="destination" path="../ftb_cluster01_connection/ftb_cluster01_sector01_connection/ftb_cluster01_sector01_zone03_connection/connection_ClusterGate_ftb01To14">
+        <connection name="ClusterGate_ftb01To014" ref="destination" path="../ftb_cluster01_connection/ftb_cluster01_sector01_connection/ftb_cluster01_sector01_zone01_connection/connection_ClusterGate_ftb01To14">
             <macro connection="destination" path="../../../../../Cluster_14_connection/Cluster_14_Sector001_connection/Zone001_Cluster_14_Sector001_connection/connection_ClusterGate014To_ftb01" />
         </connection>
     </add>

@@ -6,17 +6,19 @@
                 <event_cue_signalled cue="md.Setup.GameStart"/>
             </conditions>
             <actions>
-                <show_help duration="2s" custom="'Starting Initial Setup'"/>
                 <signal_cue cue="FTB_PHQ_Setup" />
                 <signal_cue cue="FTB_Faction_Setup" />
+                <!-- Needs rework
                 <signal_cue cue="FTB_Ship_Setup" />
-                <!-- Just for debug purposes -->
+                -->
+                <!-- Just for debug purposes 
                 <signal_cue cue="FTB_UncoverMap" />
+                -->
             </actions>
         </cue>
 
-        <!-- Let's skip the station intro drag -->
-        <cue name="FTB_PHQ_Setup" >
+        <!-- Let's skip what we've seen a thousand times -->
+        <cue name="FTB_PHQ_Setup" module="x4ep1_gamestart_ftb_easy">
             <conditions>
 	            <event_cue_signalled/>
             </conditions>
@@ -29,29 +31,29 @@
                 <!-- Prevent initial Mission offer to trigger again -->
                 <cancel_cue cue="md.X4Ep1_Mentor_Subscriptions.Initialise" />
 	            <!-- <set_owner object="md.X4Ep1_Mentor_Subscriptions.Start.$HQ.buildstorage" faction="faction.player" overridenpc="true"/> -->
-                <!-- Let the player know everything is up and running (We might push this further down once everything is set up) -->
-                <show_help duration="2s" custom="'PHQ Setup Finished'"/>
+                <!-- Enable the Research Menu -->
+				<set_value name="player.entity.$x4ep1_hq_research_unlocked"/>
             </actions>
         </cue>
 
         <!-- Faction Setup -->
-        <cue name="FTB_Faction_Setup" >
+        <cue name="FTB_Faction_Setup" module="x4ep1_gamestart_ftb_easy">
             <conditions>
 	            <event_cue_signalled/>
             </conditions>
             <actions>
                 <!-- Faction knowledge -->
-                <set_faction_known faction="faction.alliance" known="false" />
+                <set_faction_known faction="faction.alliance" known="true" />
                 <set_faction_known faction="faction.antigone" known="true" />
                 <set_faction_known faction="faction.argon" known="true" />
-                <set_faction_known faction="faction.hatikvah" known="false" />
-                <set_faction_known faction="faction.holyorder" known="false" />
-                <set_faction_known faction="faction.paranid" known="false" />
-                <set_faction_known faction="faction.ministry" known="false"/>
-                <set_faction_known faction="faction.scaleplate" known="false" />
-                <set_faction_known faction="faction.teladi" known="false" />
-                <set_faction_known faction="faction.xenon" known="false" />
-                <set_faction_known faction="faction.khaak" known="false" />
+                <set_faction_known faction="faction.hatikvah" known="true" />
+                <set_faction_known faction="faction.holyorder" known="true" />
+                <set_faction_known faction="faction.paranid" known="true" />
+                <set_faction_known faction="faction.ministry" known="true"/>
+                <set_faction_known faction="faction.scaleplate" known="true" />
+                <set_faction_known faction="faction.teladi" known="true" />
+                <set_faction_known faction="faction.xenon" known="true" />
+                <set_faction_known faction="faction.khaak" known="true" />
                 <!-- Set Player relations to known factions -->
                 <set_faction_relation faction="faction.argon" otherfaction="faction.player" value="0.032"/>
                 <set_faction_relation faction="faction.antigone" otherfaction="faction.player" value="0.032"/>
@@ -60,12 +62,11 @@
                 <set_faction_relation faction="faction.khaak" otherfaction="faction.player" value="-1"/>
                 <set_faction_relation faction="faction.scaleplate" otherfaction="faction.player" value="-0.0032"/>
                 <set_faction_relation faction="faction.criminal" otherfaction="faction.player" value="-0.0032"/>
-                <show_help duration="2s" custom="'Faction Setup finished'"/>
             </actions>
         </cue>
 
         <!-- Ship Setup -->
-        <cue name="FTB_Ship_Setup" >
+        <cue name="FTB_Ship_Setup" module="x4ep1_gamestart_ftb_easy">
             <conditions>
 	            <event_cue_signalled/>
             </conditions>
@@ -73,13 +74,15 @@
                 <!-- Add pilot to player ship -->
 				<find_ship name="$PlayerShip" owner="faction.player" space="player.zone" multiple="false" />
 				<create_control_entity name="$NewPilot" object="$PlayerShip" post="controlpost.aipilot" >
-					<select race="[race.argon]" tags="tag.aipilot"/>
-					<owner exact="faction.player"/>
+                    <!-- Find a way to add custom NPC -->
+					<select race="[race.argon]" tags="tag.aipilot" />
+					<owner exact="faction.player" overridenpc="true"/>
 				</create_control_entity>
                 <!-- Set pilot skill level -->
                 <set_skill entity="$NewPilot" type="skilltype.piloting" exact="10" />
 				<set_skill entity="$NewPilot" type="skilltype.engineering" exact="5" />
-                <show_help duration="2s" custom="'Ship Setup finished'"/>
+                <!-- Let the player know everything is up and running (We might push this further down once everything is set up) -->
+                <show_help duration="2s" custom="'Gamestart Setup Finished'"/>
             </actions>
         </cue>
 

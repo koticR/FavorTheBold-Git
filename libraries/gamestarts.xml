@@ -12,13 +12,12 @@
                 <item name="{1021,3}" value="{82002,3}" />
                 <item name="{1021,4}" value="{82002,4}" />
             </info>
-            <!-- ToDo: Replace with custom sector next to Argon Prime -->
-            <location galaxy="xu_ep2_universe_macro" zone="ftb_cluster01_sector01_zone03_macro">
+            <location galaxy="xu_ep2_universe_macro" zone="ftb_cluster01_sector01_zone01_macro">
                 <position x="5000" y="0" z="-10000"/>
                 <rotation yaw="0" pitch="0" roll="0" />
             </location>
             <player macro="character_player_ftb_macro" money="25000000" name="{82002,1}">
-                <!-- For total immersion we should create a unique starting ship. Maybe something like Vandros Skunk :D but for now we stick to what we have (An Elite Vanguard) -->
+                <!-- ToDo: Setup unique ship macro to avoid issues with missing licenses -->
                 <ship macro="ship_arg_s_fighter_02_a_macro">
                     <loadout>
                         <macros>
@@ -48,14 +47,36 @@
                     <!-- <ware ware="inv_timewarp" amount="1" /> -->
                     <ware ware="weapon_gen_spacesuit_repairlaser_01_mk1" amount="1" />
                     <ware ware="software_scannerobjectmk3" amount="1" />
+                    <ware ware="paintmod_0002" amount="100" /> <!-- Argon Theme -->
+                    <ware ware="paintmod_0024" amount="100" /> <!-- Argon Var 01 Theme -->
+                    <ware ware="paintmod_0025" amount="100" /> <!-- Argon Var 01 Theme -->
+                    <ware ware="paintmod_0026" amount="100" /> <!-- Argon Var 01 Theme -->
+                    <ware ware="paintmod_0003" amount="100" /> <!-- Antigone Theme -->
+                    <ware ware="paintmod_0027" amount="100" /> <!-- Antigone Var 01 Theme -->
+                    <ware ware="paintmod_0028" amount="100" /> <!-- Antigone Var 02 Theme -->
+                    <ware ware="paintmod_0029" amount="100" /> <!-- Antigone Var 03 Theme -->
+                    <ware ware="paintmod_0006" amount="100" /> <!-- Player Theme -->
+                    <ware ware="paintmod_0048" amount="100" /> <!-- Player Var 01 Theme -->
+                    <ware ware="paintmod_0049" amount="100" /> <!-- Player Var 02 Theme -->
+                    <ware ware="paintmod_0050" amount="100" /> <!-- Player Var 03 Theme -->
+                    <ware ware="paintmod_0008" amount="100" /> <!-- Ownerless Theme -->
                 </inventory>
                 <blueprints>
                     <ware ware="clothingmod_0001" />
                     <ware ware="clothingmod_0002" />
-                    <ware ware="paintmod_0006"/>
-                    <ware ware="paintmod_0048"/>
-                    <ware ware="paintmod_0049"/>
-                    <ware ware="paintmod_0050"/>
+                    <ware ware="paintmod_0002"/> <!-- Argon Theme -->
+                    <ware ware="paintmod_0024"/> <!-- Argon Var 01 Theme -->
+                    <ware ware="paintmod_0025"/> <!-- Argon Var 01 Theme -->
+                    <ware ware="paintmod_0026"/> <!-- Argon Var 01 Theme -->
+                    <ware ware="paintmod_0003"/> <!-- Antigone Theme -->
+                    <ware ware="paintmod_0027"/> <!-- Antigone Var 01 Theme -->
+                    <ware ware="paintmod_0028"/> <!-- Antigone Var 02 Theme -->
+                    <ware ware="paintmod_0029"/> <!-- Antigone Var 03 Theme -->
+                    <ware ware="paintmod_0006"/> <!-- Player Theme -->
+                    <ware ware="paintmod_0048"/> <!-- Player Var 01 Theme -->
+                    <ware ware="paintmod_0049"/> <!-- Player Var 02 Theme -->
+                    <ware ware="paintmod_0050"/> <!-- Player Var 03 Theme -->
+                    <ware ware="paintmod_0008"/> <!-- Ownerless Theme -->
                     <ware ware="module_arg_dock_m_01" />
                     <ware ware="module_arg_dock_m_01_hightech" />
                     <ware ware="module_arg_dock_m_02" />

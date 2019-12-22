@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<content id="ftb_820xx" name="Favor The Bold" description="ToDo: Mod Description! " author="FlynTie" version="260" date="2019-16-12" save="0" enabled="1">
- <text language="44" name="Favor The Bold" description="ToDo: Mod Description! " author="FlynTie" version="260" date="2019-16-12" />
- <text language="49" name="Favor The Bold" description="ToDo: Mod Description! " author="FlynTie" version="260" date="2019-16-12" />
- <text language="7" name="Favor The Bold" description="ToDo: Mod Description! " author="FlynTie" version="260" date="2019-16-12" />
- <text language="33" name="Favor The Bold" description="ToDo: Mod Description! " author="FlynTie" version="260" date="2019-16-12" />
- <text language="34" name="Favor The Bold" description="ToDo: Mod Description! " author="FlynTie" version="260" date="2019-16-12" />
- <text language="39" name="Favor The Bold" description="ToDo: Mod Description! " author="FlynTie" version="260" date="2019-16-12" />
- <text language="55" name="Favor The Bold" description="ToDo: Mod Description! " author="FlynTie" version="260" date="2019-16-12" />
- <text language="81" name="Favor The Bold" description="ToDo: Mod Description! " author="FlynTie" version="260" date="2019-16-12" />
- <text language="82" name="Favor The Bold" description="ToDo: Mod Description! " author="FlynTie" version="260" date="2019-16-12" />
- <text language="86" name="Favor The Bold" description="ToDo: Mod Description! " author="FlynTie" version="260" date="2019-16-12" />
- <text language="88" name="Favor The Bold" description="ToDo: Mod Description! " author="FlynTie" version="260" date="2019-16-12" />
+<content id="ftb_820xx" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" save="0" enabled="1">
+ <text language="44" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
+ <text language="49" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
+ <text language="7" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
+ <text language="33" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
+ <text language="34" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
+ <text language="39" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
+ <text language="55" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
+ <text language="81" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
+ <text language="82" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
+ <text language="86" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
+ <text language="88" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
 </content>

@@ -28,5 +28,25 @@
 				</connection>
 			</connections>
 		</macro>
+
+		<!-- Favor The Bold - Initial NPC Pilot Character, just for the giggles -->
+  		<macro name="character_npc_pilot_ftb_macro" class="npc" comment="new argon / terran caucasian female">
+    		<component ref="character_argon_female_01" />
+    		<properties>
+				<identification name="{82004,1}" race="argon" female="true" />
+				<bonemods>
+					<bonemod type="Legs" exact="1.0">
+						<bones>
+							<bone name="Bip01 Pelvis"/>
+						</bones>
+					</bonemod>
+				</bonemods>
+				<models>
+					<model type="head" ref="assets/characters/argon/heads/char_arg_f_head_cau_02" />
+					<model type="torso" ref="assets/characters/argon/bodies/char_arg_f_body_crew_01" />
+					<model type="props" ref="assets/characters/argon/props/char_arg_f_hair_cau_03" />
+				</models>
+    		</properties>
+  		</macro>		
 	</add>
 </diff>

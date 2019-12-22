@@ -10,7 +10,7 @@
                 <select start="extensions\FavorTheBold\Cluster\ftb_amb_02" weight="30"/>
                 <select start="extensions\FavorTheBold\Cluster\ftb_amb_03" weight="30"/>
                 <select start="extensions\FavorTheBold\Cluster\ftb_amb_04" weight="30"/>
-                <select start="extensions\FavorTheBold\Cluster\ftb_amb_05" weight="70"/> <!-- Priority higher because it's beautiful! -->
+                <select start="extensions\FavorTheBold\Cluster\ftb_amb_05" weight="90"/> <!-- Priority higher because it's beautiful! -->
             </sample>
                 <volume start="0.3"/>
             <effects>
