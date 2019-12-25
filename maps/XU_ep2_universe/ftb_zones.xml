@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ToDo:
+    - Refine Sector Zoning!
+-->
 <macros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <macro name="ftb_cluster01_sector01_zone01_macro" class="zone">
     <component ref="standardzone" />
@@ -14,7 +17,7 @@
                 <position x="0" y="500" z="0" />
                 <rotation yaw="135" pitch="0" roll="0" />
             </offset>
-            <macro ref="props_gates_orb_accelerator_01_macro" connection="space" />
+            <macro ref="props_gates_anc_gate_macro" connection="space" />
         </connection>
     </connections>
     </macro>

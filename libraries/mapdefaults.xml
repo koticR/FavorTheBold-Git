@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ToDo:
+    - Improve background story. Give the player something to read.
+-->
 <diff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
     <add sel="//defaults">
         <dataset macro="ftb_cluster01_macro">

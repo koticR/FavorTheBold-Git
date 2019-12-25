@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
-    Notes for code diggers...
+<!-- ToDo:
+	- Find a way to custom NPC pilot to starting ship but without it sitting in the pilot chair upon gamestart.
 -->
 <diff>
     <add sel="/macros">

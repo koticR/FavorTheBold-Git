@@ -1,5 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<content id="ftb_820xx" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" save="0" enabled="1">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ToDo: 
+    - Translate
+    - Proper and more flavored description.
+    - Make sure that the player understands that this Gamestart will leave a footprint in his savegame.
+-->
+<content id="ftb_820xx" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" save="1" enabled="1">
  <text language="44" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
  <text language="49" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />
  <text language="7" name="Favor The Bold" description="A custom Gamestart within a custom sector linked to Argon Prime." author="FlynTie or ChrisR" version="260" date="2019-16-12" />

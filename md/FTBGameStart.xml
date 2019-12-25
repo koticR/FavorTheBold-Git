@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ToDo:
+    - Find a way to let the player decide on startup if he wants the HQ or not.
+    - Find a way to let the player decide on startup if he wants the HQ in Argon Prime, his Home Sector or at its default position.
+    - Find a way to let the player decide on startup if he wants the HQ Mission to start or not, IMPORTANT: UNLOCK THE RESEARCH somehow.
+    - Find out if there is really no other way for the player to learn about other factions.
+    - Implement the other difficulty gamestart.
+    - Make home cluster know to the player.
+    - Prevent other factions from initial spawn in the home sector.
+-->
 <mdscript name="FTBGameStart" >
     <cues>
         <cue name="FTB_Easy_Initial_Setup" module="x4ep1_gamestart_ftb_easy">
@@ -6,7 +15,9 @@
                 <event_cue_signalled cue="md.Setup.GameStart"/>
             </conditions>
             <actions>
+                <!-- No HQ for now or i'm going to murder Boso Ta 
                 <signal_cue cue="FTB_PHQ_Setup" />
+                -->
                 <signal_cue cue="FTB_Faction_Setup" />
                 <!-- Needs rework
                 <signal_cue cue="FTB_Ship_Setup" />
@@ -93,7 +104,6 @@
             </conditions>
             <delay exact="10s" />
             <actions>
-
                 <find_cluster groupname="$allclusters" space="player.galaxy" multiple="true" />
                 <do_all exact="$allclusters.count" counter="$i">
                     <set_known object="$allclusters.{$i}" known="true" />

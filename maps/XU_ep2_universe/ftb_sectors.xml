@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ToDo:
+    - Refine Sector Zoning!
+-->
 <macros>
     <macro name="ftb_cluster01_sector01_macro" class="sector">
     <component ref="standardsector" />

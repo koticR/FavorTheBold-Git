@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
-    Notes for code diggers...
+<!-- ToDo:
+    - Add custom starting ship with faction rep independent loadout.
+    - Add custom NPC Pilot.
+    - Difficulty based modules, research, ship and money.
+    - Custom Paint Jobs.
 -->
 <diff>
     <add sel="/gamestarts">

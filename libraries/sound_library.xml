@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <diff>
     <add sel="/soundlibrary">
-        <sound id="music_cluster_ftb" description="Music for Vandros" repeat="-1" is3d="0" preload="0">
+        <sound id="music_cluster_ftb" description="Music for Eden Prime" repeat="-1" is3d="0" preload="0">
             <sample selection="random">
+                <!-- Need to test if the tracks work
                 <select start="music\Cluster\p1_amb_01" weight="30"/>
                 <select start="music\Cluster\p1_amb_02" weight="30"/>
                 <select start="music\Cluster\p1_amb_07" weight="30"/>
-                <select start="extensions\FavorTheBold\Cluster\ftb_amb_01" weight="30"/>
-                <select start="extensions\FavorTheBold\Cluster\ftb_amb_02" weight="30"/>
-                <select start="extensions\FavorTheBold\Cluster\ftb_amb_03" weight="30"/>
-                <select start="extensions\FavorTheBold\Cluster\ftb_amb_04" weight="30"/>
-                <select start="extensions\FavorTheBold\Cluster\ftb_amb_05" weight="90"/> <!-- Priority higher because it's beautiful! -->
+                <select start="extensions\FavorTheBold\music\Cluster\ftb_amb_01" weight="30"/>
+                <select start="extensions\FavorTheBold\music\Cluster\ftb_amb_02" weight="30"/>
+                <select start="extensions\FavorTheBold\music\Cluster\ftb_amb_03" weight="30"/>
+                <select start="extensions\FavorTheBold\music\Cluster\ftb_amb_04" weight="30"/>
+                -->
+                <select start="extensions\FavorTheBold\music\Cluster\ftb_amb_05" weight="90"/> <!-- Priority higher because it's beautiful! -->
             </sample>
-                <volume start="0.3"/>
+                <volume start="0.5"/>
             <effects>
                 <fade in="1.66667" out="0.666667"/>
             </effects>

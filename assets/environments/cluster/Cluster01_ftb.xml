@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
-<!-- ToDo: Further customizations -->
+<!-- ToDo: 
+	- Switch sun to a more appealing one.
+	- Move Planet below general travel route.
+	- Refine nebulae, maybe add custom ones.
+	- Tinker with sector coloring and lighting.
+-->
 <components>
 	<component name="Cluster01_ftb" class="celestialbody">
 		<source geometry="extensions\FavorTheBold\assets\environments\cluster\Cluster01_ftb_data"/>
