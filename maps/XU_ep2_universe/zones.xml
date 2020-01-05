@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <diff>
     <add sel="/macros/macro[@name='Zone001_Cluster_14_Sector001_macro']/connections">
-        <connection name="connection_ClusterGate014To_ftb01" ref="gates">
-            <offset>
-                <!-- 
+            <connection name="ftb_gate_c014_ftb01_connection" ref="gates">
+                <offset>
+                    <!--
                     Don't move the gate in an existing save or it will teleport you to the limbo.
                     Don't position it to far away from the zone center or it will not work (Noticable on the stuck animations).
-                 -->
-                <position x="0" y="500" z="10000" />
-                <!-- Not sure why we need quaternion on a gate but i'll leave it in in case we need to revert it at some point.
-                <quaternion qx="0" qy="0" qz="0" qw="1" />
-                -->
-                <rotation yaw="-35" pitch="0" roll="0" />
-            </offset>
-            <macro ref="props_gates_anc_gate_macro" connection="space" />
-        </connection>        
-    </add>  
+                    -->
+                    <position x="0" y="500" z="10000" />
+                    <!-- Not sure why we need quaternion on a gate but i'll leave it in in case we need to revert it at some point.
+                    <quaternion qx="0" qy="0" qz="0" qw="1" />
+                    -->
+                    <rotation yaw="-35" pitch="0" roll="0" />
+                </offset>
+                <macro ref="props_gates_anc_gate_macro" connection="space" />
+            </connection>
+    </add>
 </diff>

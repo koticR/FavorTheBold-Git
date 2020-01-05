@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+
+
+    <!-- NOTE: Most descriptions for parameters can be found in their respective shader (see shadergl/high_spec/shadername.ogl) -->
+    <add sel="/materiallibrary/collection[@name='newplanets']">
+        <material name="planet_ftb_eprime" shader="P1_planet_earthlike.fx" blendmode="NONE" preview="none">
+            <properties>
+                <!-- Light Scale (defined in default.xml) -->
+                <property type="Float" name="AnisoX" value="0.8" />
+                <property type="Float" name="AnisoY" value="0.4" />
+
+                <!-- Diffuse Params -->
+                <property type="BitMap" name="diffuse_map" value="assets\textures\environments\planets\continents_map_v1" />
+                <property type="Float" name="diffuseStr" value="1.0" />
+                <!-- <property type="Color" name="diffuse_color" r="147" g="147" b="147" a="255" value="(color 147 147 147)" /> -->
+                <property type="Float" name="diffuse_tiling" value="1.0" />
+                <property type="Float" name="diffuse_tiling_v" value="1.0" />
+                <property type="Float" name="DiffOffsetU" value="0.0" />
+                <property type="BitMap" name="diffuse_detail_map" value="assets\textures\environments\planets\continents_map_v1" />
+                <property type="Float" name="diffuse_detailStr" value="1.0" />
+                <!-- <property type="Color" name="diffuse_detail_color" r="0" g="0" b="0" a="255" value="(color 0 0 0)" /> -->
+                <property type="Float" name="diffuse_detail_tiling" value="3.0" />
+                <property type="Float" name="diffuse_detail_tiling_v" value="3.0" />
+                <property type="Float" name="DiffDetailOffsetU" value="0.0" />
+                <property type="Float" name="DiffDetailOffsetV" value="0.0" />
+
+                <!-- Normal Params -->
+                <property type="BitMap" name="normal_map" value="assets\textures\environments\planets\continenttest_normal" />
+                <property type="Float" name="normalStr" value="3.0" />
+                <property type="Float" name="normal_tiling" value="1.0" />
+                <property type="Float" name="normal_tiling_v" value="1.0" />
+                <property type="BitMap" name="normal_detail_map" value="assets\textures\environments\planets\continenttest_normal" />
+                <!-- Not sure why this is available but maybe some of you know.
+                <property type="Color" name="normal_color" r="0" g="0" b="0" a="0" value="(color 0 0 0)" />
+                -->
+                <property type="Float" name="normal_detailstr" value="1.5" />
+                <property type="Float" name="normal_detail_tiling" value="3.0" />
+                <property type="Float" name="normal_detail_tiling_v" value="3.0" />
+                <!-- Again, not sure why this is available but maybe some of you know.
+                <property type="Color" name="normal_detail_color" r="0" g="0" b="0" a="0" value="(color 0 0 0)" />
+                -->
+
+                <!-- Environment Params -->
+                <!-- <property type="BitMap" name="environment_map" value="assets\textures\environments\planets\envmap_test" /> -->
+                <property type="Float" name="environmentstr" value="0.25" />
+                <!--
+                <property type="Color" name="environment_color" r="147" g="147" b="147" a="255" value="(color 147 147 147)" />
+                <property type="Float" name="environment_tiling" value="1.0" />
+                <property type="Float" name="environment_tiling_v" value="1.0" />
+                -->
+
+
+                <!-- Polar Params -->
+                <!-- The higher the value the smaller the polar cap, remember this hides polar pinches in the UVs so don't make it too small. -->
+                <property type="BitMap" name="polar_map" value="assets\textures\environments\planets\polar_cap_v2_diff" />
+                <property type="Float" name="PolarScale" value="0.85" />
+                <property type="Float" name="polarstr" value="1.0" />
+                <!-- <property type="Color" name="polar_color" r="230" g="243" b="255" a="255" value="(color 230 243 255)" /> -->
+                <!--
+                <property type="Float" name="polar_tiling" value="1.0" />
+                <property type="Float" name="polar_tiling_v" value="1.0" />
+                -->
+
+                <!-- Gradient Params
+                    Assuming this is Gradient Mapping, which takes a grayscale value and maps it to a certain color value
+                    In-depth look at it here: (https://polycount.com/discussion/85807/tutorial-gradient-mapping-udk)
+                -->
+                <property type="BitMap" name="color_height_map" value="assets\textures\environments\planets\color_gradient_v3_height" />
+                <!--
+                <property type="Float" name="color_heightStr" value="1.0" />
+                <property type="Color" name="color_height_color" r="255" g="255" b="255" a="255" value="(color 255 255 255)" />
+                <property type="Float" name="color_height_tiling" value="1.0" />
+                <property type="Float" name="color_height_tiling_v" value="1.0" />
+                -->
+                <property type="BitMap" name="color_climate_map" value="assets\textures\environments\planets\color_gradient_climate_v3" />
+                <!--
+                <property type="Float" name="color_climateStr" value="1.0" />
+                <property type="Color" name="color_climate_color" r="255" g="255" b="255" a="255" value="(color 255 255 255)" />
+                <property type="Float" name="color_climate_tiling" value="1.0" />
+                <property type="Float" name="color_climate_tiling_v" value="1.0" />
+                -->
+
+                <!-- City Params -->
+                <property type="BitMap" name="citymap_map" value="assets\textures\environments\planets\citymap_small" />
+                <property type="Float" name="citymapStr" value="1.0" />
+                <!-- <property type="Color" name="citymap_color" r="0" g="0" b="0" a="255" value="(color 0 0 0)" /> -->
+                <property type="Float" name="citymap_tiling" value="1.0" />
+                <property type="Float" name="citymap_tiling_v" value="1.0" />
+                <!-- Citylevel acts like a specular scale but is supposed to represent population level -->
+                <property type="Float" name="citylevel" value="0.85" />
+                <property type="BitMap" name="color_glow_map" value="assets\textures\environments\planets\citymap_glowHD2" />
+                <property type="Float" name="color_glowStr" value="1.5" />
+                <!-- <property type="Color" name="color_glow_color" r="0" g="0" b="0" a="255" value="(color 0 0 0)" /> -->
+                <property type="Float" name="color_glow_tiling" value="1.0" />
+                <property type="Float" name="color_glow_tiling_v" value="1.0" />
+
+                <!-- Clouds Params -->
+                <property type="Color" name="color_atmo" r="72" g="89" b="141" a="61" value="(color 72 89 141 61)" />
+                <property type="BitMap" name="cloudmap_map" value="assets\textures\environments\planets\clouds_diff" />
+                <property type="Float" name="cloudmapstr" value="1.3" />
+                <!-- <property type="Color" name="cloudmap_color" r="0" g="0" b="0" a="255" value="(color 0 0 0)" /> -->
+                <property type="Float" name="cloudmap_tiling" value="1.0" />
+                <property type="Float" name="cloudmap_tiling_v" value="0.5" />
+                <property type="Float" name="cloudCutOff" value="0.2" />
+                <property type="BitMap" name="clouds_mask_map" value="assets\textures\environments\planets\cloudmap_test_v2" />
+                <property type="Float" name="clouds_maskStr" value="2.0" />
+                <!-- <property type="Color" name="clouds_mask_color" r="0" g="0" b="0" a="255" value="(color 0 0 0)" /> -->
+                <property type="Float" name="clouds_mask_tiling" value="0.5" />
+                <property type="Float" name="clouds_mask_tiling_v" value="1.0" />
+                <property type="Float" name="CloudsDiffOffsetU" value="0.0" />
+                <property type="BitMap" name="clouds_detail_mask_map" value="assets\textures\environments\planets\cloudmap_test_v2" />
+                <property type="Float" name="clouds_detail_maskStr" value="1.5" />
+                <!-- <property type="Color" name="clouds_detail_mask_color" r="0" g="0" b="0" a="0" value="(color 0 0 0)" /> -->
+                <property type="Float" name="clouds_detail_mask_tiling" value="3.0" />
+                <property type="Float" name="clouds_detail_mask_tiling_v" value="3.0" />
+                <property type="Float" name="CloudsDiffDetailOffsetU" value="0.0" />
+                <property type="Float" name="CloudsDiffDetailOffsetV" value="0.0" />
+                <property type="BitMap" name="densecloudmap_map" value="assets\textures\environments\planets\clouds_diff" />
+                <property type="Float" name="densecloudmapstr" value="2.0" />
+                <!-- <property type="Color" name="densecloudmap_color" r="0" g="0" b="0" a="0" value="(color 0 0 0)" /> -->
+                <property type="Float" name="densecloudmap_tiling" value="1.0" />
+                <property type="Float" name="densecloudmap_tiling_v" value="1.0" />
+                <property type="Float" name="denseCutOff" value="0.5" />
+                <property type="Float" name="cloud_colorfactor" value="0.1" />
+                <property type="Float" name="cloud_speed" value="0.0012" />
+
+                <!-- Atmosphere Params -->
+                <!-- Light Wavelength - Assuming how much light per channel passes through the outer radius. Not sure tho. This mainly effects transition from light to dark side of the planet.-->
+                <property type="Float" name="wavelength_red" value="0.65" />
+                <property type="Float" name="wavelength_green" value="0.57" />
+                <property type="Float" name="wavelength_blue" value="0.475" />
+                <!--
+                    Outer and Inner Radius of the Atmosphere.
+                    I use the mesh size -256000 for the inner radius and +256000 for the outer radius.
+                    Same applies for the Atmosphere below.
+                -->
+                <property type="Float" name="fOuterRadius" value="40306000.0" />
+                <property type="Float" name="fInnerRadius" value="39794000.0" />
+                <!-- Atmosphere Density -->
+                <property type="Float" name="fDensity" value="0.75" />
+                <!-- Atmosphere Height (i.e. the altitude at which the atmosphere's average density is found) -->
+                <property type="Float" name="fScaleDepth" value="0.25" />
+                <!-- Sun Brightness or Intesity -->
+                <property type="Float" name="m_ESun" value="15.0" />
+                <!-- Rayleigh Scattering (https://en.wikipedia.org/wiki/Rayleigh_scattering) -->
+                <property type="Float" name="m_kr" value="0.0025" />
+                <!-- Mie Scattering (https://en.wikipedia.org/wiki/Mie_scattering) -->
+                <property type="Float" name="m_km" value="0.0010" />
+
+                <!-- Water Params -->
+                <property type="Float" name="waterlevel" value="0.33" />
+                <!-- This is defined as a Emissive Color, so high values might look to bright in game. -->
+                <property type="Color" name="color_water" r="60" g="100" b="140" a="255" value="(color 60 100 140)" />
+
+
+                <!-- Adjustment Params (For the planetary surface (your diffuse map) -->
+                <property type="Float" name="base_brightness_shift" value="1.0" />
+                <property type="Float" name="base_contrast_shift" value="1.0" />
+                <property type="Float" name="base_hue_shift" value="0.0" />
+                <property type="Float" name="base_saturation_shift" value="1.0" />
+
+            </properties>
+        </material>
+    </add>
+
+    <!-- ToDo: Increase Atmosphere size -->
+    <add sel="/materiallibrary/collection[@name='newplanets']">
+        <material name="atmo_planet_ftb_eprime" shader="P1_planet_atmosphere_scattering.fx" blendmode="PLANET_ATMOSPHERE" preview="none">
+            <properties>
+                <property type="Color" name="color_Atmo" r="72" g="89" b="141" a="128" value="(color 72 89 141 128)" />
+                <property type="Float" name="fOuterRadius" value="40806000.0" />
+                <property type="Float" name="fInnerRadius" value="40294000.0" />
+                <property type="Float" name="m_ESun" value="1.50" />
+                <property type="Float" name="fScaleDepth" value="0.25" />
+                <property type="Float" name="wavelength_red" value="0.65" />
+                <property type="Float" name="wavelength_green" value="0.57" />
+                <property type="Float" name="wavelength_blue" value="0.475" />
+                <property type="Float" name="fDensity" value="1.0" />
+                <property type="Float" name="m_kr" value="0.0025" />
+                <property type="Float" name="m_km" value="0.0010" />
+            </properties>
+        </material>
+    </add>
+
+    <!-- TODO:
+        This needs to be replaced with our own macro, to prevent overwritting game files who are used elsewhere!
+        Using a different shader/blendmode brings down FT from 40ms to 33ms ((approx.) tested over multiple launches)
+
+    <replace sel="/materiallibrary/collection[@name='effects']/material[@name='fog_outside_03']">
+        <material name="fog_outside_03" shader="XU_effects_layered_unlit2.fx" blendmode="ADDITIVE" preview="none" priority="3">
+            <properties>
+                <property type="BitMap" name="diffuse_map" value="assets\legacy\textures\environments\asteroids\dustcloud_big_diff" />
+                <property type="Float" name="diffuseStr" value="1.0" />
+                <property type="Float" name="angle_fade_speed" value="3.0" />
+                <property type="Float" name="angle_fade_offset" value="0.0" />
+                <property type="Float" name="camera_fade_range" value="100.0" />
+                <property type="Float" name="camera_fade_range_near_start" value="0.0" />
+                <property type="Float" name="camera_fade_range_near_end" value="4.0" />
+                <property type="Float" name="camera_fade_range_far_start" value="2000.0" />
+                <property type="Float" name="camera_fade_range_far_end" value="3000.0" />
+
+                <property type="Float" name="camera_fade_speed" value="1.0" />
+                <property type="Float" name="softparticle_range_min" value="0.0" />
+                <property type="Float" name="softparticle_range_max" value="10.0" />
+                <property type="Color" name="base_color" r="175" g="175" b="185" a="14" value="(color 175 175 175 4)" />
+            </properties>
+            <variations />
+            <areas />
+        </material>
+    </replace>
+    -->
+
+    <add sel="/materiallibrary/collection[@name='environments']">
+        <material name="ftb_wormholeeffect" shader="XU_distortion_anim.fx" blendmode="DISTORTION" preview="none" priority="3">
+            <properties>
+                <property type="BitMap" name="normal_map" value="assets\fx\textures\wormhole_distortion_v2_normal" />
+                <property type="Float" name="mat_strength" value="2.0" />
+                <property type="Float" name="angle_fade_speed" value="1.6" />
+                <property type="Float" name="angle_fade_offset" value="0.0" />
+                <property type="Float" name="camera_fade_range_near_start" value="0.0" />
+                <property type="Float" name="camera_fade_range_near_end" value="2.0" />
+                <property type="Float" name="u_speed" value="0.01" />
+                <property type="Float" name="v_speed" value="0.0" />
+                <property type="Float" name="mat_mode" value="1.0" />
+            </properties>
+        </material>
+    </add>
+
+    <add sel="/materiallibrary/collection[@name='effects']">
+        <material name="ftb_anomaly_spec" shader="P1_simple_unlit.fx" blendmode="SCREEN" preview="none">
+            <properties>
+                <property type="BitMap" name="diffuse_map" value="assets\fx\textures\fx_gatewhirl_diff" />
+                <property type="Float" name="diffuseStr" value="0.05" />
+            </properties>
+        </material>
+    </add>
+</diff>

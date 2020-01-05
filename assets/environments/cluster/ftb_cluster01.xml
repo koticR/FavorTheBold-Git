@@ -1,0 +1,626 @@
+<?xml version="1.0"?>
+<!-- ToDo:
+	- Improve lenseffect gradient.
+	- Improve overall lighting.
+	- Find a better way to create/modify meshes. The XML approach by XConverter is impractical for sectors due to it's huge scale.
+	- Add more SunFlares and see if we can at least reuse them.
+-->
+<components>
+	<component name="ftb_cluster01" class="celestialbody">
+		<!-- If you use custom meshes or meshes from other clusters you need to put them into a dedicated folder for your cluster. Referencing from other folders is not possible. -->
+		<source geometry="extensions\FavorTheBold\assets\environments\cluster\ftb_cluster01_data"/>
+		<layers>
+			<layer>
+				<!-- Need to lookup the use of waypoints -->
+				<waypoints/>
+				<!--
+					Here you can define your sunlight and ambient light.
+					The offset represents the position on the "sky". These should be very large values (Use E-Notation) so the player can't reach it.
+					If you use a sun mesh (defined below) you should align its postion to the values defined here or vice versa.
+				-->
+				<lights>
+					<omni name="XU Omni01" shadow="0" r="255" g="185" b="150" range="1E+11" shadowrange="1E+11" lighteffect="1" lenseffect="sun_corona_ftb" trigger="1" intensity="1.5" specularintensity="0.7">
+						<!-- I need to look through the files and see what light anims are possible, if any -->
+						<lightanimations/>
+						<offset>
+							<!-- I've "normalized" the values so they are easier to work with -->
+							<position x="1.50E+8" y="2.25E+8" z="3.70E+8"/>
+						</offset>
+					</omni>
+					<!-- Nebula secondary light -->
+					<omni name="XU Omni02" shadow="0" r="56" g="20" b="49" range="1E+11" shadowrange="1E+11" lighteffect="1" trigger="1" intensity="1.0" specularintensity="0.33">
+						<lightanimations/>
+						<offset>
+							<position x="-3.50E+8" y="1.00E+8" z="-3.00E+8"/>
+						</offset>
+					</omni>
+
+					<ambient name="XU Ambient01" r="75" g="45" b="75" range="1E+11" intensity="1.0">
+						<lightanimations/>
+						<offset>
+							<!-- Rather strange that a position is given here since AL usually doesn't need a position
+							<position x="0" y="0" z="0"/>
+							-->
+						</offset>
+					</ambient>
+				</lights>
+			</layer>
+		</layers>
+		<connections>
+			<!-- Not sure what these mean, yet -->
+			<connection name="container" tags="contents" value="0"/>
+			<connection name="position" tags="position" value="1"/>
+			<connection name="space" tags="celestialbody">
+				<!-- What's this stray offset? -->
+				<offset/>
+			</connection>
+			<!-- Sector Vista Setup
+				NOTE: Any Mesh referenced here (<part name"">) needs to be in the folder defined above <source geometry=""/> or the whole sector will be pitch black.
+			-->
+			<!-- Vertex painting to add large scale color values to the main sky dome. -->
+			<connection name="Connection001" tags="part  nocollision ">
+				<offset>
+					<!-- Its position and rotation relative to the (presumably) cluster/sector origin -->
+					<position x="0" y="0" z="0"/>
+					<quaternion qx="0" qy="0" qz="0" qw="1"/>
+				</offset>
+				<parts>
+					<!-- Mesh name "part_c08_bg001-lod0" without the -lod0 suffix -->
+					<part name="part_c08_bg001">
+						<lods>
+							<lod index="0">
+								<materials>
+									<!-- Looks like materials are defined inside the mesh itself.  -->
+									<material id="1" ref="p1.p1_env_bg_vertexcolor"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<!-- Actual mesh scale (500000000) in this case -->
+							<max x="5.00E+8" y="5.00E+8" z="5.00E+8"/>
+							<center x="0" y="0" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Background Starfield
+				It uses stars_diffhq.dds as base which is a atlas texture.
+				Might also utilize vertex painting not sure tho.
+			-->
+			<connection name="Connection002" tags="part  nocollision ">
+				<offset>
+					<position x="0" y="0" z="0"/>
+					<quaternion qx="0" qy="0" qz="0" qw="1"/>
+				</offset>
+				<parts>
+					<part name="Background">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="p1.backgroundstars"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="4.85E+8" y="4.85E+8" z="4.85E+8"/>
+							<center x="0" y="0" z="0"/>
+						</size>
+						<!-- Its pivot location, not sure yet what's the difference to pos offset. Haven't tinkered with it yet. -->
+						<pivot>
+							<offset>
+								<position x="0" y="0" z="0"/>
+							</offset>
+						</pivot>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- From here on out i only comment what's needed, since it basically repeats itself with just different values and meshes. -->
+
+			<!-- Large vista stars variation -->
+			<connection name="Connection003" tags="part  nocollision ">
+				<offset>
+					<position x="-997781.3" y="1.871735E+07" z="-4825531"/>
+				</offset>
+				<parts>
+					<part name="bigstar01">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="p1.staratlas_additive"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="4.188068E+08" y="3.213062E+08" z="4.120481E+08"/>
+							<center x="1920641" y="1847445" z="1.017139E+07"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Medium vista stars variation -->
+			<connection name="Connection004" tags="part  nocollision ">
+				<offset>
+					<position x="1.80145E+07" y="2.962553E+07" z="-3.299144E+07"/>
+				</offset>
+				<parts>
+					<part name="mediumstar01">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="p1.staratlas_additive"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="4.085806E+08" y="3.422354E+08" z="4.402675E+08"/>
+							<center x="-2.78312E+07" y="1.698259E+07" z="2153848"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Small vista stars variation -->
+			<connection name="Connection005" tags="part  nocollision ">
+				<offset>
+					<position x="7473418" y="1.433093E+07" z="5.874078E+07"/>
+				</offset>
+				<parts>
+					<part name="smallstar01">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="p1.staratlas_additive"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="4.312398E+08" y="3.871544E+08" z="4.86025E+08"/>
+							<center x="-1.665568E+07" y="-4.514437E+07" z="2029813"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Vista nebula variation -->
+			<connection name="Connection006" tags="part  nocollision ">
+				<offset>
+					<position x="9688625" y="1.011985E+07" z="4014094"/>
+				</offset>
+				<parts>
+					<part name="nebula01">
+						<lods>
+							<lod index="0">
+								<materials>
+									<!-- ToDo: Replace with proper Nebula texture. -->
+									<material id="1" ref="p1.staratlas_additive"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="5.278677E+08" y="5.080862E+08" z="5.377494E+08"/>
+							<center x="1.117039E+07" y="1.167419E+07" z="-1.362538E+07"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Main Nebula -->
+			<connection name="Connection007" tags="part  nocollision ">
+				<offset/>
+				<parts>
+					<part name="part_c08_neb_06_03">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="p1.p1_env_nebular_06"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="2.644501E+08" y="3.152151E+08" z="2.228493E+08"/>
+							<center x="-1.824662E+08" y="6.461555E+07" z="2.231381E+08"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Eden Prime Planet -->
+			<connection name="Connection008" tags="part  ">
+				<offset>
+					<position x="-1.25E+8" y="2.90E+7" z="-1.50E+7"/>
+				</offset>
+				<parts>
+					<part name="sm_ep_planet">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.planet_ftb_eprime"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<!--
+ 							<max x="3.86E+7" y="3.86E+7" z="3.86E+7"/>
+							<center x="0" y="0" z="0"/>
+							-->
+							<max x="4.005e+007" y="4.005e+007" z="4.005e+007" />
+							<center x="83000" y="119500" z="40300" />
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- ToDo: Increase Atmosphere size -->
+			<!-- Eden Prime Planet Atmosphere -->
+			<connection name="Connection009" tags="part  ">
+				<offset>
+					<position x="-1.25E+8" y="2.90E+7" z="-1.50E+7"/>
+				</offset>
+				<parts>
+					<part name="sm_ep_planet_atmo">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.atmo_planet_ftb_eprime"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="4.055e+007" y="4.055e+007" z="4.055e+007" />
+							<center x="105200" y="93700" z="48900" />
+							<!--
+							<max x="3.92E+7" y="3.92E+7" z="3.92E+7"/>
+							<center x="0" y="0" z="0"/>
+							-->
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Eden Prime Moon 01 -->
+			<connection name="Connection010" tags="part  nocollision ">
+				<offset>
+					<position x="-2.00E+08" y="1.40E+8" z="-2.65E+08"/>
+				</offset>
+				<parts>
+					<part name="sm_ep_moon">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.planet_cluster30_moon1"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="1.1E+07" y="1.1E+07" z="1.1E+07"/>
+							<center x="0" y="0" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Eden Prime Moon Atmoshere 01 -->
+			<connection name="Connection011" tags="part  nocollision ">
+				<offset>
+					<position x="-2.00E+08" y="1.40E+8" z="-2.65E+08"/>
+				</offset>
+				<parts>
+					<part name="sm_ep_moon_atmo">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.atmo_cluster30_moon1"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="1.125E+07" y="1.125E+07" z="1.125E+07"/>
+							<center x="0" y="0" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Eden Prime Gas Giant -->
+			<connection name="Connection012" tags="part  nocollision ">
+				<offset>
+					<position x="1.26E+8" y="2.10E+6" z="-2.25E+8"/>
+					<quaternion qx="-0" qy="-1" qz="-0" qw="-7.54979E-08"/>
+				</offset>
+				<parts>
+					<part name="sm_ep_gas">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.planet_cluster15_moon1"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="1.49E+7" y="1.49E+7" z="1.49E+7"/>
+							<center x="0" y="0" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Eden Prime Gas Giant Atmosphere -->
+			<connection name="Connection013" tags="part  nocollision ">
+				<offset>
+					<position x="1.26E+8" y="2.10E+6" z="-2.25E+8"/>
+					<quaternion qx="-0" qy="-1" qz="-0" qw="-7.54979E-08"/>
+				</offset>
+				<parts>
+					<part name="sm_ep_gas_atmo">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.atmo_cluster15_moon1"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="1.53E+7" y="1.53E+7" z="1.53E+7"/>
+							<center x="0" y="0" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Eden Prime Gas Giant Rings (Need a custom one since all other are way to big)
+			<connection name="Connection014" tags="part iklink  " parent="sm_ep_gas">>
+				<offset>
+					<position x="0" y="0" z="0"/>
+				</offset>
+				<parts>
+					<part name="sm_ep_gas_ring">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.rings_cluster29_gasgiant"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="20000" y="20000" z="20000"/>
+							<center x="0" y="0" z="0"/>
+						</size>
+						<size_raw>
+							<max x="20000" y="20000" z="20000"/>
+							<center x="0" y="0" z="0"/>
+						</size_raw>
+					</part>
+				</parts>
+			</connection>
+			-->
+
+			<!-- Sun Mesh -->
+			<connection name="Connection015" tags="part  nocollision ">
+				<offset>
+					<!-- <position x="-2.447572E+08" y="6.036307E+07" z="2.784219E+08"/> -->
+					<position x="1.50E+8" y="2.25E+8" z="3.70E+8"/>
+				</offset>
+				<parts>
+					<part name="sun_v002">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.sun_v2"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="2.83E+7" y="2.83E+7" z="2.83E+7"/>
+							<!-- <center x="578843.8" y="-252839.8" z="275156.3"/> -->
+							<center x="0" y="0" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- All Flares need a bit of extra work to make them look better -->
+
+			<!-- Sun Flare 01 -->
+			<connection name="Connection016" tags="part animation textureanimation nocollision ">
+				<offset>
+					<position x="1.50E+8" y="2.25E+8" z="3.70E+8"/>
+					<quaternion qx="0.7071068" qy="-0" qz="-0" qw="-0.7071068"/>
+				</offset>
+				<animations>
+					<animation name="loop" start="0" end="10000"/>
+				</animations>
+				<parts>
+					<part name="Loft204">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.sun_flares_v3"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="2.715514E+07" y="5456121" z="2.997221E+07"/>
+							<center x="274109.4" y="256824.2" z="-108281.3"/>
+						</size>
+						<size_raw>
+							<max x="2.688102E+07" y="5347857" z="2.971539E+07"/>
+							<center x="274109.4" y="256824.2" z="-108281.3"/>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="2">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"/>
+									<key frame="10000" value="-10"/>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"/>
+									<key frame="10000" value="50"/>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"/>
+									<key frame="10000" value="-20"/>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Sun Flare 02 -->
+			<connection name="Connection017" tags="part animation textureanimation nocollision ">
+				<offset>
+					<position x="1.50E+8" y="2.25E+8" z="3.70E+8"/>
+					<quaternion qx="-0.6830127" qy="-0.6830127" qz="0.1830126" qw="0.1830128"/>
+				</offset>
+				<animations>
+					<animation name="loop" start="0" end="10000"/>
+				</animations>
+				<parts>
+					<part name="Loft205">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.sun_flares_v3"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="2.743307E+07" y="5186054" z="3.02324E+07"/>
+							<center x="1556297" y="85207.03" z="-831718.8"/>
+						</size>
+						<size_raw>
+							<max x="2.734786E+07" y="3422406" z="3.029026E+07"/>
+							<center x="1556297" y="85203.13" z="-831718.8"/>
+						</size_raw>
+						<offset>
+							<position x="-15.625" y="15.625" z="-31.25"/>
+						</offset>
+						<uv_animations>
+							<uv_animation mapchannel="2">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"/>
+									<key frame="10000" value="-10"/>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"/>
+									<key frame="10000" value="50"/>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"/>
+									<key frame="10000" value="-20"/>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Sun Flare 03 -->
+			<connection name="Connection018" tags="part animation textureanimation nocollision ">
+				<offset>
+					<position x="1.50E+8" y="2.25E+8" z="3.70E+8"/>
+					<quaternion qx="0.5" qy="-0" qz="-0" qw="-0.8660254"/>
+				</offset>
+				<animations>
+					<animation name="loop" start="0" end="10000"/>
+				</animations>
+				<parts>
+					<part name="Loft206">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.sun_flares_v3"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="2.774164E+07" y="4438651" z="3.009247E+07"/>
+							<center x="-534140.6" y="301117.2" z="621718.8"/>
+						</size>
+						<size_raw>
+							<max x="2.827577E+07" y="4826535" z="2.952081E+07"/>
+							<center x="-534140.6" y="301117.2" z="621750"/>
+						</size_raw>
+						<offset>
+							<position x="0" y="-15.625" z="-31.25"/>
+						</offset>
+						<uv_animations>
+							<uv_animation mapchannel="2">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"/>
+									<key frame="10000" value="-10"/>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"/>
+									<key frame="10000" value="50"/>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"/>
+									<key frame="10000" value="-20"/>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+
+			<!-- Sun Flare 04 -->
+			<connection name="Connection019" tags="part animation textureanimation nocollision ">
+				<offset>
+					<position x="1.50E+8" y="2.25E+8" z="3.70E+8"/>
+					<quaternion qx="-0.5" qy="-0.5" qz="-0.5" qw="0.5"/>
+				</offset>
+				<animations>
+					<animation name="loop" start="0" end="10000"/>
+				</animations>
+				<parts>
+					<part name="Loft207">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.sun_flares_v3"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="2.803399E+07" y="6536416" z="3.030819E+07"/>
+							<center x="-869437.5" y="-469414.1" z="-584843.8"/>
+						</size>
+						<size_raw>
+							<max x="2.861882E+07" y="7405864" z="3.07776E+07"/>
+							<center x="-869437.5" y="-469418" z="-584843.8"/>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="2">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"/>
+									<key frame="10000" value="-10"/>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"/>
+									<key frame="10000" value="50"/>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"/>
+									<key frame="10000" value="-20"/>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+
+		</connections>
+	</component>
+</components>

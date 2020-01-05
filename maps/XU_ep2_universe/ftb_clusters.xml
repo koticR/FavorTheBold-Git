@@ -1,57 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ToDo: 
-    - Setup more POI like Lockboxes, Abandoned ships, Structures & Dead Gates.
-    - Better resource distribution.
+<!--
+    Note:
+    - Ranges in here are define in the Metrics system, i.e. a value of 500000 (five hundred thousand) would be 500km in game.
+      But sectors can be significantly larger if you so desire.
+      Consider when placing regions far out that players might not travel that far since in vanilla there is usually nothing out there.
+      I suggest a max. of 500km (better yet 250km) otherwise travel times become to long and resource or trading vessels will take forever.
+
+    ToDo:
+    - Improve performance of Xenon ore field fog area.
+    - Add Anomaly to Xenon ore field that leads to a new unknow sector.
+    - Place more small highyield ore patches throughout the sector.
 -->
 <macros>
     <macro name="ftb_cluster01_macro" class="cluster">
-    <component ref="standardcluster"/>
-    <connections>
-        <connection name="ftb_cluster01_sector01_connection" ref="sectors">
-            <macro ref="ftb_cluster01_sector01_macro" connection="cluster" />
-        </connection>
-        <!-- Region 01 Setup -->
-        <connection name="ftb_cluster01_region00_connection" ref="regions">
-            <offset>
-                <position x="75000" y="1500" z="-24250" />
-            </offset>
-            <macro name="ftb_cluster01_region00_macro">
-                <component connection="cluster" ref="standardregion" />
-                <properties>
-                    <region ref="p1_40km_asteroid_field" />
-                </properties>
-            </macro>
-        </connection>
-        <!-- Region 02 Setup -->
-        <connection name="ftb_cluster01_region01_connection" ref="regions">
-            <offset>
-                <position x="-75000" y="-2500" z="-10250" />
-            </offset>
-            <macro name="ftb_cluster01_region01_macro">
-                <component connection="cluster" ref="standardregion" />
-                <properties>
-                    <region ref="p1_40km_ice_field" />
-                </properties>
-            </macro>
-        </connection>
-        <!-- Region 03 Setup -->
-        <connection name="ftb_cluster01_region02_connection" ref="regions">
-            <offset>
-                <position x="23250" y="5000" z="23500" />
-            </offset>
-            <macro name="ftb_cluster01_region02_macro">
-                <component connection="cluster" ref="standardregion" />
-                <properties>
-                    <region ref="p1_40km_hydrogen_field" />
-                </properties>
-            </macro>
-        </connection>
+        <component ref="standardcluster" />
+        <connections>
+            <connection name="ftb_cluster01_sector001_connection" ref="sectors">
+                <macro ref="ftb_cluster01_sector001_macro" connection="cluster" />
+            </connection>
+            <!-- General Resources -->
+            <connection name="ftb_cluster01_region001_connection" ref="regions">
+                <macro name="ftb_cluster01_region001_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="region_ftb_cluster01_sector001" />
+                    </properties>
+                </macro>
+            </connection>
 
-        <connection ref="content">
-            <macro>
-                <component connection="space" ref="Cluster01_ftb" />
-            </macro>
-        </connection>
-    </connections>
+            <!-- Audio Region -->
+            <connection name="ftb_cluster01_region002_connection" ref="regions">
+                <macro name="ftb_cluster01_region002_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="audioregion_ftb_cluster01_sector001" />
+                    </properties>
+                </macro>
+            </connection>
+
+            <!-- Small Highyield Ore Patch 01 -->
+            <connection name="ftb_cluster01_region003_connection" ref="regions">
+                <offset>
+                    <position x="128000" y="6000" z="64000" />
+                </offset>
+                <macro name="ftb_cluster01_region003_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="ftb_region_small_highyield_ore" />
+                    </properties>
+                </macro>
+            </connection>
+
+            <!-- Small Highyield Ore Patch 02 -->
+            <connection name="ftb_cluster01_region004_connection" ref="regions">
+                <offset>
+                    <position x="-75000" y="1500" z="450000" />
+                </offset>
+                <macro name="ftb_cluster01_region004_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="ftb_region_small_highyield_ore" />
+                    </properties>
+                </macro>
+            </connection>
+
+            <!-- Small Highyield Silicon Patch 01 -->
+            <connection name="ftb_cluster01_region005_connection" ref="regions">
+                <offset>
+                    <position x="-100000" y="-2500" z="-56000" />
+                </offset>
+                <macro name="ftb_cluster01_region005_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="ftb_region_small_highyield_silicon" />
+                    </properties>
+                </macro>
+            </connection>
+
+            <!-- Small Highyield Silicon Patch 02 -->
+            <connection name="ftb_cluster01_region006_connection" ref="regions">
+                <offset>
+                    <position x="105000" y="1500" z="-85000" />
+                </offset>
+                <macro name="ftb_cluster01_region006_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="ftb_region_small_highyield_silicon" />
+                    </properties>
+                </macro>
+            </connection>
+
+            <!-- Small Highyield Nividium Patch 01 -->
+            <connection name="ftb_cluster01_region007_connection" ref="regions">
+                <offset>
+                    <position x="42000" y="1000" z="-85000" />
+                </offset>
+                <macro name="ftb_cluster01_region007_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="ftb_region_small_highyield_nividium" />
+                    </properties>
+                </macro>
+            </connection>
+
+            <!-- Small Highyield Nividium Patch 02 -->
+            <connection name="ftb_cluster01_region008_connection" ref="regions">
+                <offset>
+                    <position x="64000" y="0" z="225000" />
+                </offset>
+                <macro name="ftb_cluster01_region008_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="ftb_region_small_highyield_nividium" />
+                    </properties>
+                </macro>
+            </connection>
+
+            <!-- Xenon Ore Field -->
+            <connection name="ftb_cluster01_region009_connection" ref="regions">
+                <offset>
+                    <!-- ToDo: Tinker with position -->
+                    <position x="0" y="0" z="250000" />
+                </offset>
+                <macro name="ftb_cluster01_region009_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="xenon_ftb_cluster01_sector001" />
+                    </properties>
+                </macro>
+            </connection>
+
+            <!-- Xenon Ore Fog Field 01 - I'll leave it out for now until i improved performance.
+            <connection name="ftb_cluster01_region005_connection" ref="regions">
+                <offset>
+                    <position x="-64000" y="5500" z="12800" />
+                </offset>
+                <macro name="ftb_cluster01_region005_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="xenonfog_ftb_cluster01_sector001" />
+                    </properties>
+                </macro>
+            </connection>
+            -->
+
+            <!--
+                Defines our Cluster Vista.
+                Be careful to not comment it out like the idiot who writes this! :D Because if you do you will see nothing but black and wonder what you did wrong in your region_definitions.xml.
+            -->
+            <connection ref="content">
+                <macro>
+                    <component connection="space" ref="ftb_cluster01" />
+                </macro>
+            </connection>
+        </connections>
     </macro>
 </macros>

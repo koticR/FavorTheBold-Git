@@ -12,13 +12,16 @@
         <t id="2">{82003, 2}</t>
         <t id="3">25.000.000 {1001,101}</t>
         <t id="4">ToDo: Equipment</t>
+        <t id="5">Delta Flyer</t>
     </page>
     <page id="82003" title="Exodus Cluster Information" descr="0" voice="no">
         <t id="1">Exodus Cluster</t>
         <t id="2">Eden Prime</t>
         <t id="3">The Exodus Cluster was the first newly discovered sector during the latest joint venture of the Argon Federation and the Antigone. Due to the high cost, only one Accelerator is currently connected to new sector. But the people of the Antigone promised to build up a connection as well.</t>
         <t id="4">The sector of Eden Prime is one sight to behold. More to come.</t>
-        <t id="5">Nova Auberjonois, Milgrom, Jalanda City and other smaller Settlements</t>
+        <t id="5">Nova Auberjonois, Jalanda City</t>
+        <t id="6">Praxis</t>
+        <t id="7">New Canaan</t>
     </page>
     <page id="82004" title="Initial NPCs" descr="0" voice="no">
         <t id="1">Kathryn Janeway</t>

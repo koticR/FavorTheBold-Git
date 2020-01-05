@@ -1,33 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ToDo:
-    - Refine Sector Zoning!
--->
 <macros>
-    <macro name="ftb_cluster01_sector01_macro" class="sector">
-    <component ref="standardsector" />
+    <macro name="ftb_cluster01_sector001_macro" class="sector">
+        <component ref="standardsector" />
         <connections>
-            <connection name="ftb_cluster01_sector01_zone01_connection" ref="zones">
+            <!-- Zone 001 (Sector Center) -->
+            <connection name="ftb_zone001_cluster01_sector001_connection" ref="zones">
                 <offset>
                     <position x="0" y="0" z="0" />
                 </offset>
-                <macro ref="ftb_cluster01_sector01_zone01_macro" connection="sector" />
+                <macro ref="ftb_zone001_cluster01_sector001_macro" connection="sector" />
             </connection>
-            <!--
-            <connection name="ftb_cluster01_sector01_zone02_connection" ref="zones">
+            <!-- Zone 002 (Sector Right) -->
+            <connection name="ftb_zone002_cluster01_sector001_connection" ref="zones">
                 <offset>
-                    <position x="-100000" y="0" z="100000" />
+                    <!-- <position x="30000" y="0" z="30000" /> -->
+                    <position x="50000" y="0" z="0" />
                 </offset>
-                <macro ref="ftb_cluster01_sector01_zone02_macro" connection="sector" />
+                <macro ref="ftb_zone002_cluster01_sector001_macro" connection="sector" />
             </connection>
-            -->
-            <!--
-            <connection name="ftb_cluster01_sector01_zone03_connection" ref="zones">
+            <!-- Zone 003 (Sector Bottom) -->
+            <connection name="ftb_zone003_cluster01_sector001_connection" ref="zones">
                 <offset>
-                    <position x="-100000" y="0" z="100000" />
+                    <!-- <position x="0" y="0" z="-100000" /> -->
+                    <position x="0" y="0" z="-50000" />
                 </offset>
-                <macro ref="ftb_cluster01_sector01_zone03_macro" connection="sector" />
+                <macro ref="ftb_zone003_cluster01_sector001_macro" connection="sector" />
             </connection>
-                    -->
+            <!-- Zone 004 (Sector Left) -->
+            <connection name="ftb_zone004_cluster01_sector001_connection" ref="zones">
+                <offset>
+                    <!-- <position x="0" y="0" z="100000" /> -->
+                    <position x="-50000" y="0" z="0" />
+                </offset>
+                <macro ref="ftb_zone004_cluster01_sector001_macro" connection="sector" />
+            </connection>
+            <!-- Zone 005 (Sector Top) -->
+            <connection name="ftb_zone005_cluster01_sector001_connection" ref="zones">
+                <offset>
+                    <!-- <position x="0" y="0" z="-100000" /> -->
+                    <position x="0" y="50000" z="0" />
+                </offset>
+                <macro ref="ftb_zone005_cluster01_sector001_macro" connection="sector" />
+            </connection>
         </connections>
     </macro>
 </macros>

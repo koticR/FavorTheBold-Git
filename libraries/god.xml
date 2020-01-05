@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <!--
+    <add sel="/god/objects">
+        <object id="edenprime_anomaly_01">
+            <quotas>
+                <quota galaxy="1" />
+            </quotas>
+            <location class="zone" macro="ftb_zone001_cluster01_sector001_macro" />
+            <position x="-1000" y="0" z="0" />
+            <object macro="wormhole_v1_macro" />
+        </object>
+    </add>
+    -->
+</diff>

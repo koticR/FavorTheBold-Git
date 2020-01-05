@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<components>
+	<component name="ftb_cluster01_src">
+		<source geometry="assets\environments\cluster\ftb_cluster01_src_data" />
+		<connections>
+			<connection name="Connection01" tags="part">
+				<parts>
+					<part name="sm_ep_planet">
+						<size>
+							<max x="4.005e+007" y="4.005e+007" z="4.005e+007" />
+							<center x="83000" y="119500" z="40300" />
+						</size>
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.planet_ftb_eprime" />
+								</materials>
+							</lod>
+						</lods>
+					</part>
+				</parts>
+				<offset>
+					<position x="-0.000000" y="0.000000" z="0.000000" />
+				</offset>
+			</connection>
+			<connection name="Connection02" tags="part">
+				<parts>
+					<part name="sm_ep_planet_atmo">
+						<size>
+							<max x="4.055e+007" y="4.055e+007" z="4.055e+007" />
+							<center x="105200" y="93700" z="48900" />
+						</size>
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="newplanets.atmo_planet_ftb_eprime" />
+								</materials>
+							</lod>
+						</lods>
+					</part>
+				</parts>
+				<offset>
+					<position x="-0.000000" y="0.000000" z="0.000000" />
+				</offset>
+			</connection>
+		</connections>
+	</component>
+</components>

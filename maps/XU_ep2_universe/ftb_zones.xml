@@ -1,53 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ToDo:
-    - Refine Sector Zoning!
--->
-<macros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <macro name="ftb_cluster01_sector01_zone01_macro" class="zone">
-    <component ref="standardzone" />
-    <connections>
-        <connection name="ftb_cluster01_sector01_zone01_connection" ref="zones">
-            <offset>
-                <position x="0" y="0" z="0" />
-            </offset>
-            <macro ref="ftb_cluster01_sector01_zone01_macro" connection="sector" />
-        </connection>
-       <connection name="connection_ClusterGate_ftb01To14" ref="gates"> 
-            <offset>
-                <position x="0" y="500" z="0" />
-                <rotation yaw="135" pitch="0" roll="0" />
-            </offset>
-            <macro ref="props_gates_anc_gate_macro" connection="space" />
-        </connection>
-    </connections>
+<macros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">>
+     <!-- Zone 001 (Sector Center) -->
+    <macro name="ftb_zone001_cluster01_sector001_macro" class="zone">
+        <component ref="standardzone" />
+        <connections>
+            <connection name="ftb_gate_ftb01_c014_connection" ref="gates">
+                <offset>
+                    <position x="0" y="500" z="0" />
+                    <rotation yaw="135" pitch="0" roll="0" />
+                </offset>
+                <macro ref="props_gates_anc_gate_macro" connection="space" />
+            </connection>
+        </connections>
     </macro>
-    <!-- Asteroid Field 01 
-    <macro name="ftb_cluster01_sector01_zone02_macro" class="zone">
-    <component ref="standardzone" />
-    <connections>
-        <connection name="ftb_cluster01_sector01_zone02_connection" ref="gates"> 
-            <offset>
-                <position x="-1000" y="100" z="0" />
-                <rotation yaw="0" pitch="0" roll="0" />
-            </offset>
-            <macro ref="ftb_cluster01_sector01_zone02_macro" connection="space" />
-        </connection>
-    </connections>
+    <!-- Zone 002 (Sector Right) -->
+    <macro name="ftb_zone002_cluster01_sector001_macro" class="zone">
+        <component ref="standardzone" />
+        <connections>
+        </connections>
     </macro>
-    -->
-    <!-- From Van To Argon Prime -->
-    <!--
-    <macro name="ftb_cluster01_sector01_zone03_macro" class="zone">
-    <component ref="standardzone" />
-    <connections>
-        <connection name="connection_ClusterGate_ftb01To14" ref="gates"> 
-            <offset>
-                <position x="0" y="500" z="0" />
-                <rotation yaw="135" pitch="0" roll="0" />
-            </offset>
-            <macro ref="props_gates_orb_accelerator_01_macro" connection="space" />
-        </connection>
-    </connections>
+    <!-- Zone 003 (Sector Bottom) -->
+    <macro name="ftb_zone003_cluster01_sector001_macro" class="zone">
+        <component ref="standardzone" />
+        <connections>
+        </connections>
     </macro>
-    -->
+    <!-- Zone 004 (Sector Left) -->
+    <macro name="ftb_zone004_cluster01_sector001_macro" class="zone">
+        <component ref="standardzone" />
+        <connections>
+        </connections>
+    </macro>
+    <!-- Zone 005 (Sector Top) -->
+    <macro name="ftb_zone005_cluster01_sector001_macro" class="zone">
+        <component ref="standardzone" />
+        <connections>
+        </connections>
+    </macro>
 </macros>

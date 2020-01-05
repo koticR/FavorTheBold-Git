@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diff>
+    <add sel="/icons">
+        <icon name="ftb_enc_cluster01" texture="extensions\FavorTheBold\assets\fx\gui\textures\encyclopedia\systems\ftb_cluster01_diff" width="960" height="600" ></icon>
+    </add>
+</diff>

@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ToDo: 
+<!-- ToDo:
     - Find a way to prevent other factions from initial spawn in new Sector.
     - Connect other neighbor sectors.
 -->
 <diff>
+    <!-- We need to add our cluster to the games Galaxy map. -->
     <add sel="/macros/macro[@name='XU_EP2_universe_macro']/connections">
-        <!-- Cluster Setup -->
+        <!-- FTB Exodus Cluster Setup -->
+        <!-- ToDo: Figure out what this means exactly -->
         <connection name="ftb_cluster01_connection" ref="clusters">
-        <offset>
-            <position x="-30015000" y="0" z="17311340" />
-        </offset>
-        <macro ref="ftb_cluster01_macro" connection="galaxy" />
+            <offset>
+                <!--
+                    Here we define the location on the galaxy map. In our case its to the bottom right of Argon Prime.
+                    Argon Prime Coords are
+                    <position x="-45000000" y="0" z="25980000" />
+                    To calculate the correct position please read up on it here https://github.com/enenra/x4modding/wiki/Universe-Creation#cluster
+                -->
+                <position x="-30000000" y="0" z="17320000" />
+            </offset>
+            <!-- Here we define which macro this sector uses. (assets\environments\cluster\macros\ftb_cluster01_macro.xml) -->
+            <macro ref="ftb_cluster01_macro" connection="galaxy" />
         </connection>
-        <!-- ToDo: Connect other neighbor sectors -->
-        <connection name="ClusterGate_ftb01To014" ref="destination" path="../ftb_cluster01_connection/ftb_cluster01_sector01_connection/ftb_cluster01_sector01_zone01_connection/connection_ClusterGate_ftb01To14">
-            <macro connection="destination" path="../../../../../Cluster_14_connection/Cluster_14_Sector001_connection/Zone001_Cluster_14_Sector001_connection/connection_ClusterGate014To_ftb01" />
+    </add>
+    <add sel="/macros/macro[@name='XU_EP2_universe_macro']/connections">
+        <!-- Here we set up the sectors gate connection -->
+        <connection name="ftb_gate_ftb01_c014" ref="destination" path="../ftb_cluster01_connection/ftb_cluster01_sector001_connection/ftb_zone001_cluster01_sector001_connection/ftb_gate_ftb01_c014_connection">
+            <macro connection="destination" path="../../../../../Cluster_14_connection/Cluster_14_Sector001_connection/Zone001_Cluster_14_Sector001_connection/ftb_gate_c014_ftb01_connection" />
         </connection>
     </add>
 </diff>

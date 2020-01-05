@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <add sel="/renderparameters/lodrules">
+        <rule name="dbglodrule_fogvolumeftb" range="200" sizecontrib="50" speed="0.5">
+            <connections>
+                <tag name="ftb_fogvolume" />
+            </connections>
+        </rule>
+    </add>
+</diff>

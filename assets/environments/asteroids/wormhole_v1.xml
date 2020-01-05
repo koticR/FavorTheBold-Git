@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<components>
+	<component name="wormhole_v1" class="anomaly">
+		<source geometry="assets\environments\asteroids\wormhole_v1_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0"/>
+			<connection name="position" tags="position" value="1"/>
+			<connection name="space" tags="anomaly">
+				<offset/>
+			</connection>
+			<connection name="Connection001" tags="part triggerpart  ">
+				<offset/>
+				<parts>
+					<part name="nocollision_Plane001">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="environments.wormholeeffect"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="208.5116" y="181.8677" z="171.3446"/>
+							<center x="51.58024" y="9.060051" z="-42.25106"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection002" tags="part triggerpart  ">
+				<offset/>
+				<parts>
+					<part name="triggerpart_GeoSphere001">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="environments.wormholeeffect"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="50" y="50" z="50"/>
+							<center x="-5.722046E-06" y="0" z="-1.907349E-06"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection003" tags="part nocollision  ">
+				<offset>
+					<quaternion qx="-0" qy="-0.9961947" qz="-0" qw="-0.0871558"/>
+				</offset>
+				<parts>
+					<part name="nocollision_GeoSphere002">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="environments.wormholeeffect"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="50" y="50" z="50"/>
+							<center x="1.907349E-06" y="0" z="3.814697E-06"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection004" tags="part nocollision  ">
+				<offset>
+					<quaternion qx="-0" qy="0.7660444" qz="-0" qw="-0.6427876"/>
+				</offset>
+				<parts>
+					<part name="nocollision_GeoSphere003">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="environments.wormholeeffect"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="50" y="50" z="50"/>
+							<center x="1.907349E-06" y="0" z="-3.814697E-06"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection005" tags="part nocollision  ">
+				<offset>
+					<quaternion qx="-0" qy="-0.5000001" qz="-0" qw="-0.8660253"/>
+				</offset>
+				<parts>
+					<part name="nocollision_GeoSphere004">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="environments.wormholeeffect"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="50" y="50" z="50"/>
+							<center x="0" y="0" z="3.814697E-06"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection006" tags="part nocollision animation textureanimation  ">
+				<offset/>
+				<animations>
+					<animation name="loop" start="0" end="300"/>
+				</animations>
+				<parts>
+					<part name="part_Plane002">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.anomaly_spec"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="208.5116" y="181.8677" z="171.3446"/>
+							<center x="51.58023" y="9.060059" z="-42.25107"/>
+						</size>
+						<size_raw>
+							<max x="156.9314" y="172.8076" z="213.5956"/>
+							<center x="51.58024" y="9.060051" z="-42.25106"/>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="1">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"/>
+									<key frame="300" value="1"/>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

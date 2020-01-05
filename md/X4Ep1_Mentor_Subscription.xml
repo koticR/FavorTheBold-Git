@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <!-- Here we set the new spawn point of the HQ to our new sector (Eden Prime) -->
+    <replace sel="/mdscript/cues/cue[@name='Start']/actions/find_sector[@name='$HQSector']">
+        <find_sector name="$HQSector" macro="macro.ftb_cluster01_sector001_macro"/>
+    </replace>
+    <!-- Here we set the new spawn position of the HQ -->
+    <replace sel="/mdscript/cues/cue[@name='Start']/actions/set_value[@name='$HQPosition']">
+        <set_value name="$HQPosition" exact="position.[-10km, 0m, 45km]"/>
+    </replace>
+
+    <!--
+        Remember the escort mission during the Boron questline and how awful slow that ship was flying?
+        Here we allow the ship to use the travel mode.
+    -->
+    <replace sel="//cue[@name='Phase_Escape_Launch_Ship']/actions/do_if/create_order/param[@name='noboost']">
+        <param name="noboost" value="false"/>
+    </replace>
+
+    <replace sel="//cue[@name='Phase_Escape_Launch_Ship']/actions/do_else/create_order/param[@name='noboost']">
+        <param name="noboost" value="false"/>
+    </replace>
+
+    <replace sel="//cue[@name='Phase_Escape_Head_Through_Gate']/actions/do_else/create_order/param[@name='noboost']">
+        <param name="noboost" value="false"/>
+    </replace>
+</diff>

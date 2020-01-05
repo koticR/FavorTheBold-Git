@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <add sel="/lenseffects">
+        <lenseffect name="sun_corona_ftb">
+            <parameters scale="100" lengthscale="100" distancescale="linear" hueshift="0" sizeinfluence="none"></parameters>
+            <elements>
+                <element name="sun_element 1" part="part_corona_v1a" position="1" minsize="65000000" maxsize="65000000" inviewvariation="0" inviewduration="0" blendorder="behind" shinebehind="1" distancescale="linear" rotation="0" fadeangle="0" r2dtype="static" active="1" glow="1" facecamera="1"></element>
+                <element name="sun_element 2" part="part_corona_v1b" position="1" minsize="65000000" maxsize="65000000" inviewvariation="0" inviewduration="0" blendorder="behind" shinebehind="1" distancescale="linear" rotation="90" fadeangle="0" r2dtype="static" active="1" glow="1" facecamera="1"></element>
+                <element name="sun_element 3" part="part_corona_v1c" position="1" minsize="65000000" maxsize="65000000" inviewvariation="0" inviewduration="0" blendorder="behind" shinebehind="1" distancescale="linear" rotation="-90" fadeangle="0" r2dtype="static" active="1" glow="1" facecamera="1"></element>
+                <element name="sun_element 4" part="part_corona_v1d" position="1" minsize="65000000" maxsize="65000000" inviewvariation="0" inviewduration="0" blendorder="behind" shinebehind="1" distancescale="linear" rotation="-90" fadeangle="0" r2dtype="static" active="1" glow="1" facecamera="1"></element>
+                <!--
+                <element name="sun_element 5" part="part_rays_02" position="1.0012" minsize="200000000" maxsize="200000000" inviewvariation="0" inviewduration="0" blendorder="behind" shinebehind="1" distancescale="linear" rotation="0" fadeangle="0" r2dtype="static" active="1" glow="1" facecamera="1"></element>
+                <element name="sun_element 6" part="part_rays_02" position="1.00121" minsize="200000000" maxsize="200000000" inviewvariation="0" inviewduration="0" blendorder="behind" shinebehind="1" distancescale="linear" rotation="1" fadeangle="0" r2dtype="static" active="1" glow="1" facecamera="1"></element>
+                <element name="sun_element 7" part="part_rays_02" position="1.00122" minsize="200000000" maxsize="200000000" inviewvariation="0" inviewduration="0" blendorder="behind" shinebehind="1" distancescale="linear" rotation="2" fadeangle="0" r2dtype="static" active="1" glow="1" facecamera="1"></element>
+                <element name="sun_element 8" part="part_rays_02" position="1.00123" minsize="200000000" maxsize="200000000" inviewvariation="0" inviewduration="0" blendorder="behind" shinebehind="1" distancescale="linear" rotation="3" fadeangle="0" r2dtype="static" active="1" glow="1" facecamera="1"></element>
+                 -->
+                <element name="sun_element 9" part="part_glows03" position="0.9998" minsize="60" maxsize="140" inviewvariation="50" inviewduration="0" blendorder="behind" shinebehind="0" distancescale="linear" rotation="0" fadeangle="0" r2dtype="static" active="1" glow="0" facecamera="1"></element>
+                <element name="sun_element 10" part="part_glows05" position="0.9999" minsize="100" maxsize="120" inviewvariation="50" inviewduration="0" blendorder="behind" shinebehind="0" distancescale="linear" rotation="0" fadeangle="0" r2dtype="static" active="1" glow="0" facecamera="1"></element>
+                <element name="sun_element 11" part="part_glows05" position="0.9999" minsize="130" maxsize="200" inviewvariation="50" inviewduration="0" blendorder="behind" shinebehind="0" distancescale="linear" rotation="0" fadeangle="0" r2dtype="static" active="1" glow="0" facecamera="1"></element>
+            </elements>
+        </lenseffect>
+    </add>
+</diff>

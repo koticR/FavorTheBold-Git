@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- ToDo:
-	- Find a way to custom NPC pilot to starting ship but without it sitting in the pilot chair upon gamestart.
+	- Find a way to add a custom NPC pilot to the starting ship but without it sitting in the pilot chair upon gamestart.
+
+	 Note: This not need for your galaxy/sector to work. It's just something i did for the fun of it.
 -->
 <diff>
     <add sel="/macros">
@@ -28,7 +30,6 @@
 				</connection>
 			</connections>
 		</macro>
-
 		<!-- Favor The Bold - Initial NPC Pilot Character, just for the giggles -->
   		<macro name="character_npc_pilot_ftb_macro" class="npc" comment="new argon / terran caucasian female">
     		<component ref="character_argon_female_01" />
@@ -47,6 +48,6 @@
 					<model type="props" ref="assets/characters/argon/props/char_arg_f_hair_cau_03" />
 				</models>
     		</properties>
-  		</macro>		
+  		</macro>
 	</add>
 </diff>

@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<diff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
-    <add sel="/index">
-        <entry name="Cluster01_ftb" value="extensions\FavorTheBold\assets\environments\cluster\Cluster01_ftb" />
-    </add>
-</diff>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Here we tell the game where to look for our visual representation of the cluster. The one where we define how our cluster will look like later in game. -->
+<index>
+    <entry name="ftb_cluster01" value="extensions\FavorTheBold\assets\environments\cluster\ftb_cluster01"/>
+</index>

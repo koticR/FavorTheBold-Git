@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This is the macro we reference at certain places like (ftb_clusters.xml) -->
+<macros>
+  <macro name="ftb_cluster01_macro" class="celestialbody">
+    <!-- The used component for our cluster which holds all definitions of how our cluster will look later in game (ftb_cluster01.xml) -->
+    <component ref="ftb_cluster01" />
+    <properties>
+      <identification unique="0" />
+    </properties>
+  </macro>
+</macros>

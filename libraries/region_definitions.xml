@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ToDo:
+    - Find a way to put stations in foggy environments, much like it was in XR.
+
+    Notes:
+    Here we define various regions that we can place in our sector.
+    These regions are not limited to just resources like ores, ice and gases.
+    It can be also audio regions who play certain ambient sounds or debris fields from exploded stations or battles between factions.
+    Some regions use splines as their boundary definition which are hard to setup without proper visual representation, i suggest using values from vanilla.
+-->
+<diff>
+    <add sel="/regions">
+        <!-- Sector-wide scattered Asteroids - ToDo: Needs balancing -->
+        <region name="region_ftb_cluster01_sector001" density="1.0" rotation="0" noisescale="10000" seed="32" minnoisevalue="0.25" maxnoisevalue="1">
+            <boundary class="sphere">
+                <size r="500000" />
+            </boundary>
+            <falloff>
+            </falloff>
+            <fields>
+                <!--Lockboxes-->
+                <object groupref="lockboxes_extra" densityfactor="0.00005" rotation="0" rotationvariation="70" minnoisevalue="0.1" maxnoisevalue="1"/>
+                <!--Lockboxes end-->
+
+                <!-- <nebula ref="fogpattern_v2_macro" localred="56" localgreen="32" localblue="28" localdensity="0.085" uniformred="56" uniformgreen="32" uniformblue="28" uniformdensity="0.3" backgroundfog="false" resources="methane" /> -->
+                <!-- <positional ref="fog_outside_set1_red_macro" lodrule="nebula" densityfactor="0.10" rotation="0" rotationvariation="0.5" noisescale="25000" seed="30041982" minnoisevalue="0.9" maxnoisevalue="1.0" distancefactor="0.6"/> -->
+                <asteroid groupref="asteroid_nividium_l" densityfactor="0.125" rotation="360" rotationvariation="4" noisescale="25000" seed="30041982" minnoisevalue="0.9" maxnoisevalue="1"/>
+                <asteroid groupref="asteroid_ore_l" densityfactor="0.025" rotation="360" rotationvariation="4" noisescale="25000" seed="30041982" minnoisevalue="0.8" maxnoisevalue="1"/>
+                <asteroid groupref="asteroid_silicon_l" densityfactor="0.0125" rotation="360" rotationvariation="4" noisescale="25000" seed="30041982" minnoisevalue="0.8" maxnoisevalue="1"/>
+                <asteroid groupref="asteroid_ore_m" densityfactor="0.2" rotation="360" rotationvariation="8" noisescale="25000" seed="30041982" minnoisevalue="0.75" maxnoisevalue="1"/>
+                <asteroid groupref="asteroid_silicon_m" densityfactor="0.1" rotation="360" rotationvariation="8" noisescale="25000" seed="30041982" minnoisevalue="0.75" maxnoisevalue="1"/>
+                <asteroid groupref="asteroid_ore_s" densityfactor="0.4" rotation="360" rotationvariation="16" noisescale="25000" seed="30041982" minnoisevalue="0.7" maxnoisevalue="1"/>
+                <asteroid groupref="asteroid_silicon_s" densityfactor="0.2" rotation="360" rotationvariation="16" noisescale="25000" seed="30041982" minnoisevalue="0.7" maxnoisevalue="1"/>
+                <asteroid groupref="asteroid_ore_xs" densityfactor="0.4" rotation="360" rotationvariation="32" noisescale="25000" seed="30041982" minnoisevalue="0.65" maxnoisevalue="1"/>
+                <asteroid groupref="asteroid_silicon_xs" densityfactor="0.2" rotation="360" rotationvariation="32" noisescale="25000" seed="30041982" minnoisevalue="0.65" maxnoisevalue="1"/>
+            </fields>
+            <resources>
+                <resource ware="ore" yield="medium" />
+                <resource ware="silicon" yield="medium" />
+                <resource ware="nividium" yield="medium" />
+                <!-- <resource ware="methane" yield="medium" /> -->
+            </resources>
+        </region>
+
+        <!-- Small Highyield Ore -->
+        <region name="ftb_region_small_highyield_ore" density="1.5" rotation="0" noisescale="2000" seed="1309" minnoisevalue="0.15" maxnoisevalue="1">
+            <boundary class="cylinder">
+                <size r="5000" linear="4000" />
+            </boundary>
+            <falloff>
+                <lateral>
+                    <step position="0.0" value="0.0" />
+                    <step position="0.1" value="1.0" />
+                    <step position="0.9" value="1.0" />
+                    <step position="1.0" value="0.0" />
+                </lateral>
+                <radial>
+                    <step position="0.0" value="1.0" />
+                    <step position="0.8" value="1.0" />
+                    <step position="1.0" value="0.0" />
+                </radial>
+            </falloff>
+            <fields>
+                <positional ref="fog_outside_set1_dust_macro" lodrule="nebula" densityfactor="1.0" rotation="0" rotationvariation="0.0" noisescale="4000" seed="1309" minnoisevalue="0.0" maxnoisevalue="1.0" distancefactor="0.5" />
+                <asteroid groupref="asteroid_highyield_v1" lodrule="asteroidxl" densityfactor="100.0" rotation="360" rotationvariation="4" noisescale="4000" seed="1309" minnoisevalue="0.0" maxnoisevalue="1" />
+            </fields>
+            <resources>
+                <resource ware="ore" yield="veryhigh" />
+            </resources>
+        </region>
+
+        <!-- Small Highyield Silicon -->
+        <region name="ftb_region_small_highyield_silicon" density="1.5" rotation="0" noisescale="2000" seed="1309" minnoisevalue="0.15" maxnoisevalue="1">
+            <boundary class="cylinder">
+                <size r="5000" linear="4000" />
+            </boundary>
+            <falloff>
+                <lateral>
+                    <step position="0.0" value="0.0" />
+                    <step position="0.1" value="1.0" />
+                    <step position="0.9" value="1.0" />
+                    <step position="1.0" value="0.0" />
+                </lateral>
+                <radial>
+                    <step position="0.0" value="1.0" />
+                    <step position="0.8" value="1.0" />
+                    <step position="1.0" value="0.0" />
+                </radial>
+            </falloff>
+            <fields>
+                <positional ref="fog_outside_set1_dust_macro" lodrule="nebula" densityfactor="1.0" rotation="0" rotationvariation="0.0" noisescale="4000" seed="1309" minnoisevalue="0.0" maxnoisevalue="1.0" distancefactor="0.5" />
+                <asteroid groupref="asteroid_highyield_sil_v1" lodrule="asteroidxl" densityfactor="100.0" rotation="360" rotationvariation="4" noisescale="4000" seed="1309" minnoisevalue="0.0" maxnoisevalue="1" />
+            </fields>
+            <resources>
+                <resource ware="silicon" yield="veryhigh" />
+            </resources>
+        </region>
+
+        <!-- Small Highyield Nividium -->
+        <region name="ftb_region_small_highyield_nividium" density="1.5" rotation="0" noisescale="2000" seed="1309" minnoisevalue="0.15" maxnoisevalue="1">
+            <boundary class="cylinder">
+                <size r="5000" linear="4000" />
+            </boundary>
+            <falloff>
+                <lateral>
+                    <step position="0.0" value="0.0" />
+                    <step position="0.1" value="1.0" />
+                    <step position="0.9" value="1.0" />
+                    <step position="1.0" value="0.0" />
+                </lateral>
+                <radial>
+                    <step position="0.0" value="1.0" />
+                    <step position="0.8" value="1.0" />
+                    <step position="1.0" value="0.0" />
+                </radial>
+            </falloff>
+            <fields>
+                <positional ref="fog_outside_set1_dust_macro" lodrule="nebula" densityfactor="1.0" rotation="0" rotationvariation="0.0" noisescale="4000" seed="1309" minnoisevalue="0.0" maxnoisevalue="1.0" distancefactor="0.5" />
+                <asteroid groupref="asteroid_highyield_niv_v1" lodrule="asteroidxl" densityfactor="100.0" rotation="360" rotationvariation="4" noisescale="4000" seed="1309" minnoisevalue="0.0" maxnoisevalue="1" />
+            </fields>
+            <resources>
+                <resource ware="nividium" yield="veryhigh" />
+            </resources>
+        </region>
+
+        <!-- General Sector Audio -->
+        <region name="audioregion_ftb_cluster01_sector001" density="1.0" rotation="0" noisescale="10000" seed="32" minnoisevalue="0.15" maxnoisevalue="1">
+            <boundary class="sphere">
+                <size r="500000" />
+            </boundary>
+            <falloff>
+            </falloff>
+            <fields>
+                <!--Lockboxes-->
+                <object groupref="lockboxes_rare" densityfactor="0.000025" rotation="0" rotationvariation="70" minnoisevalue="0.1" maxnoisevalue="1"/>
+                <!--Lockboxes end-->
+                <!--Audio-->
+                <!--
+                <ambientsound soundid="zoned_sound_01" seed="27180" noisescale="26000" minnoisevalue="0.8" playtime="20" />
+                <ambientsound soundid="zoned_sound_02" seed="90493" noisescale="26000" minnoisevalue="0.8" playtime="20" />
+                <ambientsound soundid="zoned_sound_03" seed="11368" noisescale="26000" minnoisevalue="0.8" playtime="20" />
+                <ambientsound soundid="zoned_sound_04" seed="18999" noisescale="26000" minnoisevalue="0.8" playtime="20" />
+                <ambientsound soundid="zoned_sound_05" seed="88199" noisescale="26000" minnoisevalue="0.8" playtime="20" />
+                <ambientsound soundid="zoned_sound_06" seed="91194" noisescale="26000" minnoisevalue="0.8" playtime="20" />
+                <ambientsound soundid="zoned_sound_07" seed="72531" noisescale="26000" minnoisevalue="0.8" playtime="20" />
+                -->
+                <ambientsound soundid="music_cluster_ftb" seed="82649" noisescale="10000" minnoisevalue="0.3" priority="1" playtime="120" />
+                <!--Audio end-->
+            </fields>
+        </region>
+
+        <!--
+            Xenon Asteroid Field
+            ToDo:
+            - Try to recreate the Rebirth Xenon Ore Field from the Home of Light Gamestart.
+            - More Eerie sounds.
+            - More loot.
+            - Maybe try box boundary?
+            - Place them far out in the sector.
+            - !! This needs a lot of extra work to get resonable performance out of it.
+                 Check Xenon Asteroid LODs and if needed add more and adjust lodrule.
+                 Fog seems to utilize meshes too so see if we can do something to improve performance (Check used shaders & blendmode, maybe we can somehow reduce overdraw).
+        -->
+        <region name="xenon_ftb_cluster01_sector001" density="1.5" rotation="0" noisescale="30000" seed="666" minnoisevalue="0.15" maxnoisevalue="1">
+            <boundary class="box">
+                <size x="128000" y="10000" z="64000" />
+            </boundary>
+            <fields>
+                <asteroid groupref="asteroid_xenon_xxl" lodrule="asteroidxl" densityfactor="0.15" rotation="360" rotationvariation="4" noisescale="1000" seed="1337" minnoisevalue="0.5" maxnoisevalue="1" boxchecks="false" allowyawrotation="true" allowpitchrotation="false" allowrollrotation="false"/>
+                <asteroid groupref="asteroid_xenon_xl" lodrule="asteroidxl" densityfactor="0.05" rotation="360" rotationvariation="4" noisescale="10000" seed="1337" minnoisevalue="0.65" maxnoisevalue="1" boxchecks="false" allowyawrotation="true" allowpitchrotation="false" allowrollrotation="false"/>
+                <!-- <asteroid groupref="asteroid_xenon_l" densityfactor="0.3" rotation="360" rotationvariation="4" noisescale="20000" seed="1309" minnoisevalue="0.5" maxnoisevalue="1" boxchecks="true" allowyawrotation="true" allowpitchrotation="false" allowrollrotation="false"/> -->
+
+                <!-- They add too much noise for my taste, plus we save a few thousand drawcalls
+                <asteroid groupref="asteroid_xenon_m" densityfactor="0.15" rotation="360" rotationvariation="4" noisescale="20000" seed="1309" minnoisevalue="0.5" maxnoisevalue="1" boxchecks="true" allowyawrotation="true" allowpitchrotation="false" allowrollrotation="false"/>
+                <asteroid groupref="asteroid_xenon_s" densityfactor="0.4" rotation="360" rotationvariation="4" noisescale="30000" seed="1309" minnoisevalue="0.50" maxnoisevalue="1" boxchecks="true" allowyawrotation="true" allowpitchrotation="false" allowrollrotation="false"/>
+                <asteroid groupref="asteroid_xenon_xs" densityfactor="0.55" rotation="360" rotationvariation="4" noisescale="30000" seed="1309" minnoisevalue="0.50" maxnoisevalue="1" boxchecks="true" allowyawrotation="true" allowpitchrotation="false" allowrollrotation="false"/>
+                -->
+
+
+                <debris groupref="debris_xenon_xl" densityfactor="0.0035" rotation="360" rotationvariation="4" noisescale="15000" seed="1309" minnoisevalue="0.50" maxnoisevalue="1" distancefactor="2.0"/>
+                <debris groupref="debris_xenon_l" densityfactor="0.0015" rotation="360" rotationvariation="10" noisescale="15000" seed="313092" minnoisevalue="0.50" maxnoisevalue="1" distancefactor="2.0"/>
+                <!--
+                <debris groupref="debris_xenon_m" densityfactor="0.0075" rotation="360" rotationvariation="10" noisescale="15000" seed="1309" minnoisevalue="0.50" maxnoisevalue="1" distancefactor="2.0"/>
+                -->
+
+                <object ref="props_sm_lockbox_rare_02_macro" densityfactor="0.0025" rotation="0" rotationvariation="70" />
+                <object ref="props_sm_lockbox_rare_fragile_01_macro" densityfactor="0.0015" rotation="0" rotationvariation="70" />
+
+                <!--
+                    - More fitting sounds (eerie & dreadful)
+                    - Find a way to give them higher prio over general sector audio.
+                    - It seems that this does not work, maybe move to a seperate audio region.
+                -->
+                <ambientsound soundid="zoned_sound_01" seed="27180" noisescale="30000" minnoisevalue="0.8" priority="2" playtime="20" />
+                <ambientsound soundid="zoned_sound_08" seed="72531" noisescale="30000" minnoisevalue="0.8" priority="2" playtime="20" />
+                <ambientsound soundid="zoned_sound_09" seed="88199" noisescale="30000" minnoisevalue="0.8" priority="2" playtime="20" />
+            </fields>
+            <resources>
+                <resource ware="silicon" yield="high" />
+            </resources>
+        </region>
+
+        <!-- NOTE: Seems to be better for performance and visual direction to seperate Fog volumes. -->
+        <region name="xenonfog_ftb_cluster01_sector001" density="1.5" rotation="0" noisescale="32000" seed="666" minnoisevalue="0.15" maxnoisevalue="1">
+            <boundary class="box">
+                <size x="48000" y="5000" z="24000" />
+            </boundary>
+            <fields>
+                <positional ref="fog_outside_set3_macro" lodrule="fogvolume" densityfactor="0.5" rotation="0" rotationvariation="0.5" noisescale="1000" seed="1337" minnoisevalue="0.3" maxnoisevalue="1" distancefactor="1.0"/>
+                <positional ref="fog_outside_set7_macro" lodrule="fogvolume" densityfactor="1.0" rotation="0" rotationvariation="0.5" noisescale="1000" seed="42" minnoisevalue="0.5" maxnoisevalue="1" distancefactor="1.0"/>
+                <positional ref="fog_outside_set1_red_macro" lodrule="fogvolume" densityfactor="0.5" rotation="0" rotationvariation="0.5" noisescale="1000" seed="1984" minnoisevalue="0.3" maxnoisevalue="1.0" distancefactor="1.0"/>
+                <!-- <positional ref="fog_outside_set1_blue_macro" lodrule="nebulamedium" densityfactor="0.350" rotation="0" rotationvariation="0.5" noisescale="30000" seed="666" minnoisevalue="0.60" maxnoisevalue="1.0" distancefactor="0.40"/> -->
+                <!-- <positional ref="fog_outside_set1_lightorange_macro" lodrule="fogvolume" densityfactor="0.1" rotation="360" rotationvariation="0.5" noisescale="25000" seed="666" minnoisevalue="0.5" maxnoisevalue="1.0" distancefactor="0.5"/> -->
+                <!-- <positional ref="fog_outside_set1_darkblue_macro" lodrule="fogvolume" densityfactor="0.1" rotation="360" rotationvariation="0.5" noisescale="25000" seed="26041984" minnoisevalue="0.5" maxnoisevalue="1.0" distancefactor="0.6"/> -->
+            </fields>
+        </region>
+
+        <region name="ftb_region_small_loot" density="1.5" rotation="0" noisescale="1000" seed="13091977" minnoisevalue="0.0" maxnoisevalue="1">
+            <boundary class="sphere">
+                <size r="500" />
+            </boundary>
+            <falloff>
+            </falloff>
+            <fields>
+                <!-- ToDo: Find a way to add custom loot tables -->
+                <object ref="sm_gen_wares_rare_01_macro" densityfactor="100.0" rotation="0" rotationvariation="0" minnoisevalue="0.0" maxnoisevalue="1.0"/>
+            </fields>
+        </region>
+    </add>
+</diff>

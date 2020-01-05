@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<diff>
-    <add sel="//index">
-        <entry name="ftb_galaxy_macro" value="extensions\FavorTheBold\maps\XU_ep2_universe\galaxy"/>
-        <entry name="ftb_cluster01_*" value="extensions\FavorTheBold\maps\xu_ep2_universe\ftb_clusters" />
-        <entry name="ftb_cluster01_sector01_*" value="extensions\FavorTheBold\maps\xu_ep2_universe\ftb_sectors" />
-        <entry name="ftb_cluster01_sector01_zone01_*" value="extensions\FavorTheBold\maps\xu_ep2_universe\ftb_zones" />
-    </add>
-</diff>
+<!--
+    Here we tell the game where to look for our general galaxy, cluster, sector, zones & region setup.
+    The wildcard (*) is not needed but helps us saving time since we don't need to define every single sector one by one.
+    Make sure that that everything before the wildcard is distinguishable by you and the game.
+    Word of encouragement. Setting up a galaxy and/or sectors can be massively confusing since there is a lot of back and forth between the files!
+    Don't give up you will get it to work.
+-->
+<index>
+    <!-- Here we set the location of our hook into the games default galaxy (galaxy.xml) -->
+    <entry name="ftb_galaxy_macro" value="extensions\FavorTheBold\maps\XU_ep2_universe\galaxy"/>
+    <!-- Here we define the location of our custom cluster setup (ftb_clusters.xml) -->
+    <entry name="ftb_cluster*" value="extensions\FavorTheBold\maps\XU_ep2_universe\ftb_clusters"/>
+    <!-- Here we define the location of our custom sector setup (ftb_sectors.xml) -->
+    <entry name="ftb_cluster01_sector*" value="extensions\FavorTheBold\maps\XU_ep2_universe\ftb_sectors"/>
+    <!-- Here we define the location of our custom sector zones setup (ftb_zones.xml) -->
+    <entry name="ftb_zone*" value="extensions\FavorTheBold\maps\XU_ep2_universe\ftb_zones"/>
+</index>
