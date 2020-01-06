@@ -7,8 +7,8 @@
         <material name="planet_ftb_eprime" shader="P1_planet_earthlike.fx" blendmode="NONE" preview="none">
             <properties>
                 <!-- Light Scale (defined in default.xml) -->
-                <property type="Float" name="AnisoX" value="0.8" />
-                <property type="Float" name="AnisoY" value="0.4" />
+                <property type="Float" name="AnisoX" value="0.5" />
+                <property type="Float" name="AnisoY" value="0.5" />
 
                 <!-- Diffuse Params -->
                 <property type="BitMap" name="diffuse_map" value="assets\textures\environments\planets\continents_map_v1" />
@@ -96,7 +96,7 @@
                 <property type="Float" name="color_glow_tiling_v" value="1.0" />
 
                 <!-- Clouds Params -->
-                <property type="Color" name="color_atmo" r="72" g="89" b="141" a="61" value="(color 72 89 141 61)" />
+                <property type="Color" name="color_atmo" r="72" g="89" b="141" a="32" value="(color 72 89 141 32)" />
                 <property type="BitMap" name="cloudmap_map" value="assets\textures\environments\planets\clouds_diff" />
                 <property type="Float" name="cloudmapstr" value="1.3" />
                 <!-- <property type="Color" name="cloudmap_color" r="0" g="0" b="0" a="255" value="(color 0 0 0)" /> -->
@@ -135,10 +135,10 @@
                     I use the mesh size -256000 for the inner radius and +256000 for the outer radius.
                     Same applies for the Atmosphere below.
                 -->
-                <property type="Float" name="fOuterRadius" value="40306000.0" />
-                <property type="Float" name="fInnerRadius" value="39794000.0" />
+                <property type="Float" name="fOuterRadius" value="41300000.0" />
+                <property type="Float" name="fInnerRadius" value="40050000.0" />
                 <!-- Atmosphere Density -->
-                <property type="Float" name="fDensity" value="0.75" />
+                <property type="Float" name="fDensity" value="0.5" />
                 <!-- Atmosphere Height (i.e. the altitude at which the atmosphere's average density is found) -->
                 <property type="Float" name="fScaleDepth" value="0.25" />
                 <!-- Sun Brightness or Intesity -->
@@ -146,7 +146,7 @@
                 <!-- Rayleigh Scattering (https://en.wikipedia.org/wiki/Rayleigh_scattering) -->
                 <property type="Float" name="m_kr" value="0.0025" />
                 <!-- Mie Scattering (https://en.wikipedia.org/wiki/Mie_scattering) -->
-                <property type="Float" name="m_km" value="0.0010" />
+                <!-- <property type="Float" name="m_km" value="0.0010" /> -->
 
                 <!-- Water Params -->
                 <property type="Float" name="waterlevel" value="0.33" />
@@ -164,21 +164,21 @@
         </material>
     </add>
 
-    <!-- ToDo: Increase Atmosphere size -->
+    <!-- ToDo: Something is off with the Atmosphere falloff -->
     <add sel="/materiallibrary/collection[@name='newplanets']">
         <material name="atmo_planet_ftb_eprime" shader="P1_planet_atmosphere_scattering.fx" blendmode="PLANET_ATMOSPHERE" preview="none">
             <properties>
-                <property type="Color" name="color_Atmo" r="72" g="89" b="141" a="128" value="(color 72 89 141 128)" />
-                <property type="Float" name="fOuterRadius" value="40806000.0" />
-                <property type="Float" name="fInnerRadius" value="40294000.0" />
+                <property type="Color" name="color_Atmo" r="72" g="89" b="141" a="64" value="(color 72 89 141 64)" />
+                <property type="Float" name="fOuterRadius" value="41300000.0" />
+                <property type="Float" name="fInnerRadius" value="40788000.0" />
                 <property type="Float" name="m_ESun" value="1.50" />
                 <property type="Float" name="fScaleDepth" value="0.25" />
                 <property type="Float" name="wavelength_red" value="0.65" />
                 <property type="Float" name="wavelength_green" value="0.57" />
                 <property type="Float" name="wavelength_blue" value="0.475" />
-                <property type="Float" name="fDensity" value="1.0" />
+                <property type="Float" name="fDensity" value="0.75" />
                 <property type="Float" name="m_kr" value="0.0025" />
-                <property type="Float" name="m_km" value="0.0010" />
+                <!-- <property type="Float" name="m_km" value="0.0010" /> -->
             </properties>
         </material>
     </add>
@@ -210,29 +210,4 @@
         </material>
     </replace>
     -->
-
-    <add sel="/materiallibrary/collection[@name='environments']">
-        <material name="ftb_wormholeeffect" shader="XU_distortion_anim.fx" blendmode="DISTORTION" preview="none" priority="3">
-            <properties>
-                <property type="BitMap" name="normal_map" value="assets\fx\textures\wormhole_distortion_v2_normal" />
-                <property type="Float" name="mat_strength" value="2.0" />
-                <property type="Float" name="angle_fade_speed" value="1.6" />
-                <property type="Float" name="angle_fade_offset" value="0.0" />
-                <property type="Float" name="camera_fade_range_near_start" value="0.0" />
-                <property type="Float" name="camera_fade_range_near_end" value="2.0" />
-                <property type="Float" name="u_speed" value="0.01" />
-                <property type="Float" name="v_speed" value="0.0" />
-                <property type="Float" name="mat_mode" value="1.0" />
-            </properties>
-        </material>
-    </add>
-
-    <add sel="/materiallibrary/collection[@name='effects']">
-        <material name="ftb_anomaly_spec" shader="P1_simple_unlit.fx" blendmode="SCREEN" preview="none">
-            <properties>
-                <property type="BitMap" name="diffuse_map" value="assets\fx\textures\fx_gatewhirl_diff" />
-                <property type="Float" name="diffuseStr" value="0.05" />
-            </properties>
-        </material>
-    </add>
 </diff>

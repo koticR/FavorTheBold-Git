@@ -7,21 +7,21 @@
     <!-- Gamestart Entries-->
     <page id="82001" title="Gamestart Overview" descr="0" voice="no">
         <t id="1">Das Glück begünstigt die Mutigen (Easy)</t>
-        <t id="2">ToDo: Proper Story Description</t>
-        <t id="3">ToDo: Proper Story Description</t>
+        <t id="2">In a joint venture between the Argon Federation and the Antigone a new Cluster was discovered, inhabited by Argonians who have been separated during the shutdown of the gates.</t>
+        <t id="3">In a joint venture between the Argon Federation and the Antigone a new Cluster was discovered, inhabited by Argonians who have been separated during the shutdown of the gates.</t>
     </page>
     <page id="82002" title="Gamestart Entries" descr="0" voice="no">
         <t id="1">Avy Hel</t>
         <t id="2">{82003, 2}</t>
         <t id="3">25.000.000 {1001,101}</t>
-        <t id="4">ToDo: Equipment</t>
+        <t id="4">2x Paranid Combat MK3, 2x Beam Emitter Mk2, 1x TEL Shield Generator Mk3</t>
         <t id="5">Delta Flyer</t>
     </page>
     <page id="82003" title="Exodus Cluster Information" descr="0" voice="no">
         <t id="1">Exodus Cluster</t>
         <t id="2">Eden Prime</t>
-        <t id="3">The Exodus Cluster was the first newly discovered sector during the latest joint venture of the Argon Federation and the Antigone. Due to the high cost, only one Accelerator is currently connected to new sector. But the people of the Antigone promised to build up a connection as well.</t>
-        <t id="4">The sector of Eden Prime is one sight to behold. More to come.</t>
+        <t id="3">The Exodus Cluster was recently discovered in a joint venture between the Argon Federation and the Antigone. It turned out that it is inhabited by Argonians who have been separated during the shutdown of the gates. Thanks to the rich resources located in the sector, the Argonians managed to establish a stable and healthy population, despite being isolated for a long time. This isolation led to a more simplified type of government, focused on the needs of the population rather than competitiveness. Most cities on Eden Prime operate self-sufficient and trade only surplus wares with one another. All cities elect one or two representatives who are take a seat in the EPPC (Eden Prime Planetary Commission). The EPPC's main purpose is to take care of global duties, organize the trade between the cities and run missions to gather resources in space. Eden Prime's major capital city carries the name "Nova Auberjonois", it was the first settlement started after the shutdown, shortly followed by Jalanda City which is now home to the EPPC.</t>
+        <t id="4">The Exodus Cluster was recently discovered in a joint venture between the Argon Federation and the Antigone. It turned out that it is inhabited by Argonians who have been separated during the shutdown of the gates. Thanks to the rich resources located in the sector, the Argonians managed to establish a stable and healthy population, despite being isolated for a long time. This isolation led to a more simplified type of government, focused on the needs of the population rather than competitiveness. Most cities on Eden Prime operate self-sufficient and trade only surplus wares with one another. All cities elect one or two representatives who are take a seat in the EPPC (Eden Prime Planetary Commission). The EPPC's main purpose is to take care of global duties, organize the trade between the cities and run missions to gather resources in space. Eden Prime's major capital city carries the name "Nova Auberjonois", it was the first settlement started after the shutdown, shortly followed by Jalanda City which is now home to the EPPC.</t>
         <t id="5">Nova Auberjonois, Jalanda City</t>
         <t id="6">Praxis</t>
         <t id="7">New Canaan</t>
