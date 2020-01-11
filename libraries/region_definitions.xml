@@ -20,7 +20,7 @@
             </falloff>
             <fields>
                 <!--Lockboxes-->
-                <object groupref="lockboxes_extra" densityfactor="0.00005" rotation="0" rotationvariation="70" minnoisevalue="0.1" maxnoisevalue="1"/>
+                <object groupref="lockboxes_extra" densityfactor="0.000025" rotation="0" rotationvariation="70" minnoisevalue="0.1" maxnoisevalue="1"/>
                 <!--Lockboxes end-->
 
                 <!-- The "fogpattern_v2_macro" is fugly as hell! -->
@@ -134,7 +134,7 @@
             </falloff>
             <fields>
                 <!--Lockboxes-->
-                <object groupref="lockboxes_rare" densityfactor="0.000025" rotation="0" rotationvariation="70" minnoisevalue="0.1" maxnoisevalue="1"/>
+                <object groupref="lockboxes_rare" densityfactor="0.00001" rotation="0" rotationvariation="70" minnoisevalue="0.1" maxnoisevalue="1"/>
                 <!--Lockboxes end-->
                 <!--Audio-->
                 <!--
@@ -172,7 +172,7 @@
                 <asteroid groupref="asteroid_xenon_xxl" lodrule="asteroidxl" densityfactor="0.15" rotation="360" rotationvariation="4" noisescale="1000" seed="1337" minnoisevalue="0.5" maxnoisevalue="1" boxchecks="false" allowyawrotation="true" allowpitchrotation="false" allowrollrotation="false"/>
                 <asteroid groupref="asteroid_xenon_xl" lodrule="asteroidxl" densityfactor="0.05" rotation="360" rotationvariation="4" noisescale="10000" seed="1337" minnoisevalue="0.65" maxnoisevalue="1" boxchecks="false" allowyawrotation="true" allowpitchrotation="false" allowrollrotation="false"/>
                 <!-- <asteroid groupref="asteroid_xenon_l" densityfactor="0.3" rotation="360" rotationvariation="4" noisescale="20000" seed="1309" minnoisevalue="0.5" maxnoisevalue="1" boxchecks="true" allowyawrotation="true" allowpitchrotation="false" allowrollrotation="false"/> -->
-
+                <asteroid groupref="asteroid_silicon_m" densityfactor="0.25" rotation="360" rotationvariation="8" noisescale="1000" seed="3214" minnoisevalue="0.25" maxnoisevalue="1"/>
                 <!-- They add too much noise for my taste, plus we save a few thousand drawcalls
                 <asteroid groupref="asteroid_xenon_m" densityfactor="0.15" rotation="360" rotationvariation="4" noisescale="20000" seed="1309" minnoisevalue="0.5" maxnoisevalue="1" boxchecks="true" allowyawrotation="true" allowpitchrotation="false" allowrollrotation="false"/>
                 <asteroid groupref="asteroid_xenon_s" densityfactor="0.4" rotation="360" rotationvariation="4" noisescale="30000" seed="1309" minnoisevalue="0.50" maxnoisevalue="1" boxchecks="true" allowyawrotation="true" allowpitchrotation="false" allowrollrotation="false"/>
@@ -186,7 +186,7 @@
                 <debris groupref="debris_xenon_m" densityfactor="0.0075" rotation="360" rotationvariation="10" noisescale="15000" seed="1309" minnoisevalue="0.50" maxnoisevalue="1" distancefactor="2.0"/>
                 -->
 
-                <object ref="props_sm_lockbox_rare_02_macro" densityfactor="0.0025" rotation="0" rotationvariation="70" />
+                <object ref="props_sm_lockbox_rare_02_macro" densityfactor="0.0005" rotation="0" rotationvariation="70" />
                 <object ref="props_sm_lockbox_rare_fragile_01_macro" densityfactor="0.0015" rotation="0" rotationvariation="70" />
 
                 <!--
@@ -199,7 +199,7 @@
                 <ambientsound soundid="zoned_sound_09" seed="88199" noisescale="30000" minnoisevalue="0.8" priority="2" playtime="20" />
             </fields>
             <resources>
-                <resource ware="silicon" yield="high" />
+                <resource ware="silicon" yield="medium" />
             </resources>
         </region>
 
@@ -220,13 +220,13 @@
 
         <region name="ftb_region_small_loot" density="1.5" rotation="0" noisescale="1000" seed="13091977" minnoisevalue="0.0" maxnoisevalue="1">
             <boundary class="sphere">
-                <size r="500" />
+                <size r="1000" />
             </boundary>
             <falloff>
             </falloff>
             <fields>
                 <!-- ToDo: Find a way to add custom loot tables -->
-                <object ref="sm_gen_wares_rare_01_macro" densityfactor="100.0" rotation="0" rotationvariation="0" minnoisevalue="0.0" maxnoisevalue="1.0"/>
+                <object ref="props_sm_gen_wares_rare_01_macro" densityfactor="100.0" rotation="0" rotationvariation="0" minnoisevalue="0.0" maxnoisevalue="1.0"/>
             </fields>
         </region>
     </add>

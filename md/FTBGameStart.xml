@@ -15,46 +15,21 @@
                 <event_cue_signalled cue="md.Setup.GameStart"/>
             </conditions>
             <actions>
+                <!-- Setting Faction Relations -->
+                <signal_cue cue="FTB_Faction_Setup" />
+                <!-- Skip the Boso Ta mission. Moving HQ to Eden Prime, unlock Research Tab.
+                <signal_cue cue="FTB_PHQ_Setup" />
+                -->
+                <!-- Givbe player the Cerberus from the HQ Mission. -->
+                <signal_cue cue="FTB_Ship_Setup" />
+
                 <!-- Claim Eden Prime for the Player (if possible without placing a defense station)
                 <signal_cue cue="FTB_Sector_Setup" />
                 -->
-                <!-- We move the HQ Spawn to Eden Prime
-                <signal_cue cue="FTB_PHQ_Setup" />
-                 -->
-                <signal_cue cue="FTB_Faction_Setup" />
-                <!-- Needs rework
-                <signal_cue cue="FTB_Ship_Setup" />
-                -->
+
                 <!-- Just for debug purposes
                 <signal_cue cue="FTB_UncoverMap" />
                 -->
-            </actions>
-        </cue>
-
-        <!-- Let's skip what we've seen a thousand times -->
-        <cue name="FTB_PHQ_Setup" module="x4ep1_gamestart_ftb_easy">
-            <conditions>
-                <event_cue_signalled/>
-            </conditions>
-            <delay min="15s" max="20s" />
-            <actions>
-                <!--
-                    Move the spawning sector to our new created sector (Eden Prime)
-                    We technically do this already in the "X4Ep1_Mentor_Subscription.xml" but we do it here too just to be safe.
-                -->
-                <debug_to_file name="'FTB'" directory="'FTB'" text="'Starting HQ Setup'" output="true" append="true" />
-                <find_sector name="md.X4Ep1_Mentor_Subscriptions.Start.$HQSector" macro="macro.ftb_cluster01_sector001_macro"/>
-                <debug_to_file name="'FTB'" directory="'FTB'" text="'Set HQ cluster to Eden Prime'" output="true" append="true" />
-                <set_value name="md.X4Ep1_Mentor_Subscriptions.Start.$HQPosition" exact="position.[-10km, 0m, 45km]"/>
-                <debug_to_file name="'FTB'" directory="'FTB'" text="'Set HQ position to -10km and 45km'" output="true" append="true" />
-
-                <!-- Fast forward to the Research questline -->
-                <signal_cue cue="md.X4Ep1_Mentor_Subscriptions.SHORTCUT_Research" />
-                <!-- Prevent initial Mission offer to trigger again -->
-                <cancel_cue cue="md.X4Ep1_Mentor_Subscriptions.Initialise" />
-                <!-- <set_owner object="md.X4Ep1_Mentor_Subscriptions.Start.$HQ.buildstorage" faction="faction.player" overridenpc="true"/> -->
-                <!-- Enable the Research Menu -->
-                <set_value name="player.entity.$x4ep1_hq_research_unlocked"/>
             </actions>
         </cue>
 
@@ -87,24 +62,68 @@
             </actions>
         </cue>
 
-        <!-- Ship Setup -->
+        <!-- Let's skip what we've seen a thousand times -->
+        <cue name="FTB_PHQ_Setup" module="x4ep1_gamestart_ftb_easy">
+            <conditions>
+                <event_cue_signalled/>
+            </conditions>
+            <delay min="15s" max="20s" />
+            <actions>
+                <!--
+                    Move the spawning sector to our new created sector (Eden Prime)
+                    We technically do this already in the "X4Ep1_Mentor_Subscription.xml" but we do it here too just to be safe.
+                -->
+                <debug_to_file name="'FTB'" directory="'FTB'" text="'Starting HQ Setup'" output="true" append="true" />
+                <find_sector name="md.X4Ep1_Mentor_Subscriptions.Start.$HQSector" macro="macro.ftb_cluster01_sector001_macro"/>
+                <debug_to_file name="'FTB'" directory="'FTB'" text="'Set HQ cluster to Eden Prime'" output="true" append="true" />
+                <set_value name="md.X4Ep1_Mentor_Subscriptions.Start.$HQPosition" exact="position.[30km, 0m, -45km]"/>
+                <debug_to_file name="'FTB'" directory="'FTB'" text="'Set HQ position to 30km and -45km'" output="true" append="true" />
+
+                <!-- Fast forward to the Research questline -->
+                <debug_to_file name="'FTB'" directory="'FTB'" text="'Moving Storyline forward'" output="true" append="true" />
+                <signal_cue cue="md.X4Ep1_Mentor_Subscriptions.SHORTCUT_Research" />
+                <!-- FixMe: Prevent initial Mission offer to trigger again -->
+                <debug_to_file name="'FTB'" directory="'FTB'" text="'Preventing Mission offer to trigger again'" output="true" append="true" />
+                <cancel_cue cue="md.X4Ep1_Mentor_Subscriptions.Initialise" />
+                <!-- <set_owner object="md.X4Ep1_Mentor_Subscriptions.Start.$HQ.buildstorage" faction="faction.player" overridenpc="true"/> -->
+                <!-- Enable the Research Menu -->
+                <debug_to_file name="'FTB'" directory="'FTB'" text="'Enabling Research Menu'" output="true" append="true" />
+                <set_value name="player.entity.$x4ep1_hq_research_unlocked"/>
+            </actions>
+        </cue>
+
+        <!-- Ship Setup
+            NOTE: Only for the Easy Gamestart!
+            ToDo: Give the Cerberus a name.
+        -->
         <cue name="FTB_Ship_Setup" module="x4ep1_gamestart_ftb_easy">
             <conditions>
                 <event_cue_signalled/>
             </conditions>
             <actions>
-                <!-- Add pilot to player ship -->
-                <find_ship name="$PlayerShip" owner="faction.player" space="player.zone" multiple="false" />
-                <create_control_entity name="$NewPilot" object="$PlayerShip" post="controlpost.aipilot">
-                    <!-- Find a way to add custom NPC -->
-                    <select race="[race.argon]" tags="tag.aipilot" />
-                    <owner exact="faction.player" overridenpc="true"/>
-                </create_control_entity>
-                <!-- Set pilot skill level -->
-                <set_skill entity="$NewPilot" type="skilltype.piloting" exact="10" />
-                <set_skill entity="$NewPilot" type="skilltype.engineering" exact="5" />
-                <!-- Let the player know everything is up and running (We might push this further down once everything is set up) -->
-                <show_help duration="2s" custom="'Gamestart Setup Finished'"/>
+                <!-- Frigate -->
+                <debug_to_file name="'FTB'" directory="'FTB'" text="'Spawning the Cerberus Frigate'" output="true" append="true" />
+                <create_ship name="$Frigate" macro="ship_arg_m_frigate_01_a_macro" zone="player.zone">
+                    <select faction="faction.argon" tags="tag.frigate" />
+                    <owner exact="faction.player" overridenpc="true" />
+                    <loadout>
+                        <level exact="0.5" />
+                    </loadout>
+                    <pilot>
+                        <select faction="faction.argon" tags="tag.aipilot" />
+                    </pilot>
+                    <people>
+                        <fillpercent exact="100" />
+                        <person role="marine" weight="100">
+                            <select race="[race.argon]" tags="tag.marine" />
+                        </person>
+                    </people>
+                    <drop ref="ship_small_military" />
+                    <safepos object="player.ship" max="3km" />
+                    <rotation value="player.ship.rotation" />
+                </create_ship>
+                <debug_to_file name="'FTB'" directory="'FTB'" text="'Telling the Frigate to wait'" output="true" append="true" />
+                <create_order id="'Wait'" object="$Frigate" default="true" />
             </actions>
         </cue>
 

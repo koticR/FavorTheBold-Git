@@ -41,7 +41,7 @@
             <!-- Small Highyield Ore Patch 01 -->
             <connection name="ftb_cluster01_region003_connection" ref="regions">
                 <offset>
-                    <position x="128000" y="6000" z="105000" />
+                    <position x="597000" y="6000" z="290000" />
                 </offset>
                 <macro name="ftb_cluster01_region003_macro">
                     <component connection="cluster" ref="standardregion" />
@@ -54,7 +54,7 @@
             <!-- Small Highyield Ore Patch 02 -->
             <connection name="ftb_cluster01_region004_connection" ref="regions">
                 <offset>
-                    <position x="-75000" y="1500" z="-300000" />
+                    <position x="-652000" y="1500" z="-207000" />
                 </offset>
                 <macro name="ftb_cluster01_region004_macro">
                     <component connection="cluster" ref="standardregion" />
@@ -67,7 +67,7 @@
             <!-- Small Highyield Silicon Patch 01 -->
             <connection name="ftb_cluster01_region005_connection" ref="regions">
                 <offset>
-                    <position x="-100000" y="-2500" z="-105000" />
+                    <position x="193000" y="-2500" z="655000" />
                 </offset>
                 <macro name="ftb_cluster01_region005_macro">
                     <component connection="cluster" ref="standardregion" />
@@ -80,7 +80,7 @@
             <!-- Small Highyield Silicon Patch 02 -->
             <connection name="ftb_cluster01_region006_connection" ref="regions">
                 <offset>
-                    <position x="105000" y="1500" z="105000" />
+                    <position x="-424000" y="1500" z="-697000" />
                 </offset>
                 <macro name="ftb_cluster01_region006_macro">
                     <component connection="cluster" ref="standardregion" />
@@ -93,7 +93,7 @@
             <!-- Small Highyield Nividium Patch 01 -->
             <connection name="ftb_cluster01_region007_connection" ref="regions">
                 <offset>
-                    <position x="42000" y="1000" z="-85000" />
+                    <position x="615000" y="1000" z="736000" />
                 </offset>
                 <macro name="ftb_cluster01_region007_macro">
                     <component connection="cluster" ref="standardregion" />
@@ -106,7 +106,7 @@
             <!-- Small Highyield Nividium Patch 02 -->
             <connection name="ftb_cluster01_region008_connection" ref="regions">
                 <offset>
-                    <position x="104000" y="0" z="225000" />
+                    <position x="-400000" y="0" z="193000" />
                 </offset>
                 <macro name="ftb_cluster01_region008_macro">
                     <component connection="cluster" ref="standardregion" />
@@ -119,7 +119,7 @@
             <!-- 40km Hydrogen Field 01 -->
             <connection name="ftb_cluster01_region009_connection" ref="regions">
                 <offset>
-                    <position x="175000" y="4000" z="125000" />
+                    <position x="322000" y="4000" z="-479000" />
                 </offset>
                 <macro name="ftb_cluster01_region009_macro">
                     <component connection="cluster" ref="standardregion" />
@@ -132,7 +132,7 @@
             <!-- 40km Helium Field 01 -->
             <connection name="ftb_cluster01_region010_connection" ref="regions">
                 <offset>
-                    <position x="-200000" y="-4000" z="-125000" />
+                    <position x="-196000" y="-4000" z="-275000" />
                 </offset>
                 <macro name="ftb_cluster01_region010_macro">
                     <component connection="cluster" ref="standardregion" />
@@ -145,7 +145,7 @@
             <!-- 40km Methane Field 01 -->
             <connection name="ftb_cluster01_region011_connection" ref="regions">
                 <offset>
-                    <position x="135000" y="8000" z="215000" />
+                    <position x="285000" y="8000" z="183000" />
                 </offset>
                 <macro name="ftb_cluster01_region011_macro">
                     <component connection="cluster" ref="standardregion" />
@@ -158,7 +158,7 @@
             <!-- 40km Ice Field 01 -->
             <connection name="ftb_cluster01_region012_connection" ref="regions">
                 <offset>
-                    <position x="35000" y="-8000" z="-170000" />
+                    <position x="-430000" y="-8000" z="600000" />
                 </offset>
                 <macro name="ftb_cluster01_region012_macro">
                     <component connection="cluster" ref="standardregion" />
@@ -168,13 +168,38 @@
                 </macro>
             </connection>
 
-            <!-- Xenon Ore Field 01 -->
+            <!-- 40km Ice Field 02 -->
             <connection name="ftb_cluster01_region013_connection" ref="regions">
                 <offset>
-                    <!-- ToDo: Tinker with position -->
-                    <position x="0" y="0" z="400000" />
+                    <position x="-55000" y="-8000" z="131000" />
                 </offset>
                 <macro name="ftb_cluster01_region013_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="p1_40km_ice_field" />
+                    </properties>
+                </macro>
+            </connection>
+
+            <!-- Small Highyield Ore Patch 03 -->
+            <connection name="ftb_cluster01_region014_connection" ref="regions">
+                <offset>
+                    <position x="673000" y="1500" z="-589000" />
+                </offset>
+                <macro name="ftb_cluster01_region014_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="ftb_region_small_highyield_ore" />
+                    </properties>
+                </macro>
+            </connection>
+
+            <!-- Xenon Ore Field 01 -->
+            <connection name="ftb_cluster01_region015_connection" ref="regions">
+                <offset>
+                    <position x="-665000" y="0" z="707000" />
+                </offset>
+                <macro name="ftb_cluster01_region015_macro">
                     <component connection="cluster" ref="standardregion" />
                     <properties>
                         <region ref="xenon_ftb_cluster01_sector001" />
@@ -183,12 +208,11 @@
             </connection>
 
             <!-- Xenon Ore Field 02 -->
-            <connection name="ftb_cluster01_region014_connection" ref="regions">
+            <connection name="ftb_cluster01_region016_connection" ref="regions">
                 <offset>
-                    <!-- ToDo: Tinker with position -->
-                    <position x="-13500" y="6000" z="-350000" />
+                    <position x="256000" y="6000" z="-631000" />
                 </offset>
-                <macro name="ftb_cluster01_region014_macro">
+                <macro name="ftb_cluster01_region016_macro">
                     <component connection="cluster" ref="standardregion" />
                     <properties>
                         <region ref="xenon_ftb_cluster01_sector001" />
@@ -196,6 +220,32 @@
                 </macro>
             </connection>
 
+            <!-- Xenon Ore Field 03 -->
+            <connection name="ftb_cluster01_region017_connection" ref="regions">
+                <offset>
+                    <position x="665000" y="6000" z="-123000" />
+                </offset>
+                <macro name="ftb_cluster01_region017_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="xenon_ftb_cluster01_sector001" />
+                    </properties>
+                </macro>
+            </connection>
+
+            <!-- Test Loot Field 01
+            <connection name="ftb_cluster01_region015_connection" ref="regions">
+                <offset>
+                    <position x="5000" y="0" z="5000" />
+                </offset>
+                <macro name="ftb_cluster01_region015_macro">
+                    <component connection="cluster" ref="standardregion" />
+                    <properties>
+                        <region ref="ftb_region_small_loot" />
+                    </properties>
+                </macro>
+            </connection>
+            -->
             <!-- Xenon Ore Fog Field 01 - I'll leave it out for now until i improved performance.
             <connection name="ftb_cluster01_region005_connection" ref="regions">
                 <offset>

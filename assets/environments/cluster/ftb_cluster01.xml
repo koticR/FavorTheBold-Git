@@ -253,7 +253,7 @@
 				</parts>
 			</connection>
 
-			<!-- ToDo: Increase Atmosphere size -->
+			<!-- ToDo: Decrease Atmosphere size -->
 			<!-- Eden Prime Planet Atmosphere -->
 			<connection name="Connection009" tags="part  ">
 				<offset>

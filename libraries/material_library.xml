@@ -7,8 +7,8 @@
         <material name="planet_ftb_eprime" shader="P1_planet_earthlike.fx" blendmode="NONE" preview="none">
             <properties>
                 <!-- Light Scale (defined in default.xml) -->
-                <property type="Float" name="AnisoX" value="0.5" />
-                <property type="Float" name="AnisoY" value="0.5" />
+                <property type="Float" name="AnisoX" value="0.8" />
+                <property type="Float" name="AnisoY" value="0.8" />
 
                 <!-- Diffuse Params -->
                 <property type="BitMap" name="diffuse_map" value="assets\textures\environments\planets\continents_map_v1" />
@@ -34,7 +34,7 @@
                 <!-- Not sure why this is available but maybe some of you know.
                 <property type="Color" name="normal_color" r="0" g="0" b="0" a="0" value="(color 0 0 0)" />
                 -->
-                <property type="Float" name="normal_detailstr" value="1.5" />
+                <property type="Float" name="normal_detailStr" value="1.5" />
                 <property type="Float" name="normal_detail_tiling" value="3.0" />
                 <property type="Float" name="normal_detail_tiling_v" value="3.0" />
                 <!-- Again, not sure why this is available but maybe some of you know.
@@ -43,7 +43,7 @@
 
                 <!-- Environment Params -->
                 <!-- <property type="BitMap" name="environment_map" value="assets\textures\environments\planets\envmap_test" /> -->
-                <property type="Float" name="environmentstr" value="0.25" />
+                <property type="Float" name="environmentStr" value="0.0" />
                 <!--
                 <property type="Color" name="environment_color" r="147" g="147" b="147" a="255" value="(color 147 147 147)" />
                 <property type="Float" name="environment_tiling" value="1.0" />
@@ -55,7 +55,7 @@
                 <!-- The higher the value the smaller the polar cap, remember this hides polar pinches in the UVs so don't make it too small. -->
                 <property type="BitMap" name="polar_map" value="assets\textures\environments\planets\polar_cap_v2_diff" />
                 <property type="Float" name="PolarScale" value="0.85" />
-                <property type="Float" name="polarstr" value="1.0" />
+                <!-- <property type="Float" name="polarstr" value="1.0" /> -->
                 <!-- <property type="Color" name="polar_color" r="230" g="243" b="255" a="255" value="(color 230 243 255)" /> -->
                 <!--
                 <property type="Float" name="polar_tiling" value="1.0" />
@@ -95,10 +95,38 @@
                 <property type="Float" name="color_glow_tiling" value="1.0" />
                 <property type="Float" name="color_glow_tiling_v" value="1.0" />
 
+                <!-- Atmosphere Params -->
+                <!--
+                    Outer and Inner Radius of the Atmosphere.
+                    Inner raidus should be the scale dimensions of the planet, outer radius should be the scale dimension of the atmoshphere mesh.
+                    Same applies for the Atmosphere below.
+                -->
+                <property type="Float" name="fOuterRadius" value="41300000.0" />
+                <property type="Float" name="fInnerRadius" value="40050000.0" />
+                <!-- Atmosphere Density -->
+                <property type="Float" name="fDensity" value="0.75" />
+                <!-- Atmosphere Height (i.e. the altitude at which the atmosphere's average density is found) -->
+                <property type="Float" name="fScaleDepth" value="0.25" />
+                <!-- Sun Brightness or Intesity -->
+                <property type="Float" name="m_ESun" value="10.0" />
+                <!-- Rayleigh Scattering (https://en.wikipedia.org/wiki/Rayleigh_scattering) -->
+                <!-- <property type="Float" name="m_kr" value="0.0025" /> -->
+                <!-- Mie Scattering (https://en.wikipedia.org/wiki/Mie_scattering) -->
+                <!-- <property type="Float" name="m_km" value="0.0010" /> -->
+                <property type="Color" name="color_atmo" r="248" g="179" b="255" a="7" value="(color 248 179 255 7)" />
+                <!-- Light Wavelength - This mainly effects transition from light to dark side of the planet.-->
+                <!-- <property type="Float" name="wavelength_red" value="0.65" /> -->
+                <!-- <property type="Float" name="wavelength_green" value="0.57" /> -->
+                <!-- <property type="Float" name="wavelength_blue" value="0.475" /> -->
+
+                <!-- Water Params -->
+                <property type="Float" name="waterlevel" value="0.33" />
+                <!-- This is defined as a Emissive Color, so high values might look to bright in game. -->
+                <property type="Color" name="color_water" r="60" g="100" b="140" a="255" value="(color 60 100 140)" />
+
                 <!-- Clouds Params -->
-                <property type="Color" name="color_atmo" r="72" g="89" b="141" a="32" value="(color 72 89 141 32)" />
                 <property type="BitMap" name="cloudmap_map" value="assets\textures\environments\planets\clouds_diff" />
-                <property type="Float" name="cloudmapstr" value="1.3" />
+                <property type="Float" name="cloudmapStr" value="1.3" />
                 <!-- <property type="Color" name="cloudmap_color" r="0" g="0" b="0" a="255" value="(color 0 0 0)" /> -->
                 <property type="Float" name="cloudmap_tiling" value="1.0" />
                 <property type="Float" name="cloudmap_tiling_v" value="0.5" />
@@ -117,42 +145,13 @@
                 <property type="Float" name="CloudsDiffDetailOffsetU" value="0.0" />
                 <property type="Float" name="CloudsDiffDetailOffsetV" value="0.0" />
                 <property type="BitMap" name="densecloudmap_map" value="assets\textures\environments\planets\clouds_diff" />
-                <property type="Float" name="densecloudmapstr" value="2.0" />
+                <property type="Float" name="densecloudmapStr" value="2.0" />
                 <!-- <property type="Color" name="densecloudmap_color" r="0" g="0" b="0" a="0" value="(color 0 0 0)" /> -->
                 <property type="Float" name="densecloudmap_tiling" value="1.0" />
                 <property type="Float" name="densecloudmap_tiling_v" value="1.0" />
                 <property type="Float" name="denseCutOff" value="0.5" />
-                <property type="Float" name="cloud_colorfactor" value="0.1" />
+                <!-- <property type="Float" name="cloud_colorfactor" value="0.1" /> -->
                 <property type="Float" name="cloud_speed" value="0.0012" />
-
-                <!-- Atmosphere Params -->
-                <!-- Light Wavelength - Assuming how much light per channel passes through the outer radius. Not sure tho. This mainly effects transition from light to dark side of the planet.-->
-                <property type="Float" name="wavelength_red" value="0.65" />
-                <property type="Float" name="wavelength_green" value="0.57" />
-                <property type="Float" name="wavelength_blue" value="0.475" />
-                <!--
-                    Outer and Inner Radius of the Atmosphere.
-                    I use the mesh size -256000 for the inner radius and +256000 for the outer radius.
-                    Same applies for the Atmosphere below.
-                -->
-                <property type="Float" name="fOuterRadius" value="41300000.0" />
-                <property type="Float" name="fInnerRadius" value="40050000.0" />
-                <!-- Atmosphere Density -->
-                <property type="Float" name="fDensity" value="0.5" />
-                <!-- Atmosphere Height (i.e. the altitude at which the atmosphere's average density is found) -->
-                <property type="Float" name="fScaleDepth" value="0.25" />
-                <!-- Sun Brightness or Intesity -->
-                <property type="Float" name="m_ESun" value="15.0" />
-                <!-- Rayleigh Scattering (https://en.wikipedia.org/wiki/Rayleigh_scattering) -->
-                <property type="Float" name="m_kr" value="0.0025" />
-                <!-- Mie Scattering (https://en.wikipedia.org/wiki/Mie_scattering) -->
-                <!-- <property type="Float" name="m_km" value="0.0010" /> -->
-
-                <!-- Water Params -->
-                <property type="Float" name="waterlevel" value="0.33" />
-                <!-- This is defined as a Emissive Color, so high values might look to bright in game. -->
-                <property type="Color" name="color_water" r="60" g="100" b="140" a="255" value="(color 60 100 140)" />
-
 
                 <!-- Adjustment Params (For the planetary surface (your diffuse map) -->
                 <property type="Float" name="base_brightness_shift" value="1.0" />
@@ -168,16 +167,16 @@
     <add sel="/materiallibrary/collection[@name='newplanets']">
         <material name="atmo_planet_ftb_eprime" shader="P1_planet_atmosphere_scattering.fx" blendmode="PLANET_ATMOSPHERE" preview="none">
             <properties>
-                <property type="Color" name="color_Atmo" r="72" g="89" b="141" a="64" value="(color 72 89 141 64)" />
+                <property type="Color" name="color_Atmo" r="248" g="192" b="255" a="27" value="(color 248 192 255 27)" />
                 <property type="Float" name="fOuterRadius" value="41300000.0" />
-                <property type="Float" name="fInnerRadius" value="40788000.0" />
+                <property type="Float" name="fInnerRadius" value="40050000.0" />
                 <property type="Float" name="m_ESun" value="1.50" />
                 <property type="Float" name="fScaleDepth" value="0.25" />
-                <property type="Float" name="wavelength_red" value="0.65" />
-                <property type="Float" name="wavelength_green" value="0.57" />
-                <property type="Float" name="wavelength_blue" value="0.475" />
-                <property type="Float" name="fDensity" value="0.75" />
-                <property type="Float" name="m_kr" value="0.0025" />
+                <!-- <property type="Float" name="wavelength_red" value="0.65" /> -->
+                <!-- <property type="Float" name="wavelength_green" value="0.57" /> -->
+                <!-- <property type="Float" name="wavelength_blue" value="0.475" /> -->
+                <property type="Float" name="fDensity" value="1.0" />
+                <!-- <property type="Float" name="m_kr" value="0.0025" /> -->
                 <!-- <property type="Float" name="m_km" value="0.0010" /> -->
             </properties>
         </material>
